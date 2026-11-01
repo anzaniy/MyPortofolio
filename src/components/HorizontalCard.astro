@@ -1,8 +1,10 @@
 ---
 const { title, img, desc, url, badge, tags, target = "_blank", headingLevel = "h2" } = Astro.props;
 import { Image } from "astro:assets";
+import { withBase } from "../config";
 const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
 const Heading = headingLevel;
+const imageSrc = img && !/^https?:\/\//.test(img) ? withBase(img) : img;
 ---
 
 <div
@@ -11,9 +13,9 @@ const Heading = headingLevel;
   <a href={url} target={target}>
     <div class="hero-content flex-col md:flex-row">
       {
-        img && (
+        imageSrc && (
           <Image
-            src={img}
+            src={imageSrc}
             width={750}
             height={422}
             format="webp"

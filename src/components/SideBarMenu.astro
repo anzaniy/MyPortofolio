@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
+import { withBase } from "../config";
 
 const { sideBarActiveItemID } = Astro.props;
 
@@ -26,18 +27,18 @@ const individualProjects = sortProjects(
 
 <ul class="menu grow shrink menu-md overflow-y-auto" data-sidebar-menu data-active={sideBarActiveItemID}>
     <li>
-        <a class="py-3 text-base" data-menu-item="home" href="/">Home</a>
+        <a class="py-3 text-base" data-menu-item="home" href={withBase('/')}>Home</a>
     </li>
     <li>
         <details open={sideBarActiveItemID === "work"}>
             <summary class="py-3 text-base" data-menu-item="work">
-                <a href="/projects" class="grow">Work Project</a>
+                <a href={withBase('/projects')} class="grow">Work Project</a>
             </summary>
             <ul>
                 {
                     workProjects.map((project) => (
                         <li>
-                            <a class="py-2 text-sm project-link" href={`/projects/${project.slug}`}>
+                            <a class="py-2 text-sm project-link" href={withBase(`/projects/${project.slug}`)}>
                                 {project.data.title}
                             </a>
                         </li>
@@ -49,13 +50,13 @@ const individualProjects = sortProjects(
     <li>
         <details open={sideBarActiveItemID === "individual"}>
             <summary class="py-3 text-base" data-menu-item="individual">
-                <a href="/individual-project" class="grow">Individual Project</a>
+                <a href={withBase('/individual-project')} class="grow">Individual Project</a>
             </summary>
             <ul>
                 {
                     individualProjects.map((project) => (
                         <li>
-                            <a class="py-2 text-sm project-link" href={`/individual-project/${project.slug}`}>
+                            <a class="py-2 text-sm project-link" href={withBase(`/individual-project/${project.slug}`)}>
                                 {project.data.title}
                             </a>
                         </li>
@@ -64,7 +65,7 @@ const individualProjects = sortProjects(
             </ul>
         </details>
     </li>
-    <li><a class="py-3 text-base" data-menu-item="cv" href="/cv">CV</a></li>
+    <li><a class="py-3 text-base" data-menu-item="cv" href={withBase('/cv')}>CV</a></li>
     <li>
         <a
             class="py-3 text-base"
@@ -81,7 +82,9 @@ const applyActiveState = () => {
     if (!menu) return;
 
     const activeId = menu.dataset.active;
-    const currentPath = window.location.pathname.replace(/\/$/, "");
+    const base = import.meta.env.BASE_URL.replace(/\/+$/, "");
+    const fullPath = window.location.pathname.replace(/\/$/, "");
+    const currentPath = (base && fullPath.startsWith(base) ? fullPath.slice(base.length) : fullPath) || "/";
     const isProjectDetail =
         currentPath.startsWith("/projects/") || currentPath.startsWith("/individual-project/");
 
@@ -92,7 +95,10 @@ const applyActiveState = () => {
     });
 
     menu.querySelectorAll<HTMLAnchorElement>(".project-link").forEach((link) => {
-        const isCurrent = link.getAttribute("href") === currentPath;
+        const href = link.getAttribute("href") ?? "";
+        const normalizedHref =
+            (base && href.startsWith(base) ? href.slice(base.length) : href).replace(/\/$/, "") || "/";
+        const isCurrent = normalizedHref === currentPath;
         link.classList.toggle("bg-base-300", isCurrent);
         link.classList.toggle("font-semibold", isCurrent);
     });

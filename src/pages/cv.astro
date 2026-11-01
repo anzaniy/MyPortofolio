@@ -1,12 +1,13 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import TimeLineElement from "../components/cv/TimeLine.astro";
+import { withBase } from "../config";
 ---
 
 <BaseLayout title="CV" sideBarActiveItemID="cv">
   <h1 class="sr-only">CV Muhammad Ega Putra Anzani</h1>
   <div class="mb-8">
-    <a href="/cv.pdf" download class="btn btn-outline"> Download CV (PDF) </a>
+    <a href={withBase("/cv.pdf")} download class="btn btn-outline"> Download CV (PDF) </a>
   </div>
 
   <div class="mb-5">

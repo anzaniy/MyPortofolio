@@ -5,8 +5,9 @@ import tailwind from "@astrojs/tailwind";
 
 // https://astro.build/config
 export default defineConfig({
-  // TODO: ganti dengan domain produksi sebelum deploy.
-  site: 'https://astrofy-template.netlify.app',
+  // GitHub Pages: https://anzaniy.github.io/MyPortofolio
+  site: 'https://anzaniy.github.io',
+  base: '/MyPortofolio',
   integrations: [
     mdx(),
     sitemap({

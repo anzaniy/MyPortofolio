@@ -1,6 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import ProjectDetail from "../../components/ProjectDetail.astro";
+import { withBase } from "../../config";
 
 export async function getStaticPaths() {
   const projects = (await getCollection("projects")).filter(
@@ -19,6 +20,6 @@ const { project } = Astro.props;
 <ProjectDetail
   project={project}
   sideBarActiveItemID="individual"
-  backHref="/individual-project"
+  backHref={withBase("/individual-project")}
   backLabel="Individual Project"
 />
