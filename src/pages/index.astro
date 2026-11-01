@@ -2,74 +2,77 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import HorizontalCard from "../components/HorizontalCard.astro";
 import { getCollection } from "astro:content";
-import createSlug from "../lib/createSlug"
 
-const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
-
-const last_posts = posts.slice(0, 3);
+const individualProjects = (await getCollection("projects"))
+  .filter((project) => project.data.kind === "individual")
+  .sort((a, b) => a.data.order - b.data.order);
 ---
 
 <BaseLayout sideBarActiveItemID="home">
   <div class="pb-12 mt-5">
-    <div class="text-xl py-1">Hey there 👋</div>
-    <div class="text-5xl font-bold">I'm Manuel Ernesto</div>
-    <div class="text-3xl py-3 font-bold">Software Engineer and Entrepreneur</div>
+    <div class="text-xl py-1">Halo 👋</div>
+    <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold">Saya Muhammad Ega Putra Anzani</h1>
+    <div class="text-xl sm:text-2xl lg:text-3xl py-3 font-bold">Ilmu Komputer · Web &amp; Game Developer</div>
     <div class="py-2">
-      <text class="text-lg">
-        This is <b>Astrofy</b> a free and open-source template for your Personal Portfolio Website built with Astro and TailwindCSS.
-        Create in minutes a website with Blog, CV, Project Section, Store and RSS Feed. I hope you find
-        it useful!
-      </text>
+      <p class="text-lg">
+        Saya lulusan Ilmu Komputer Universitas Lampung yang tertarik pada pengembangan web, backend,
+        dan game edukasi. Berpengalaman membangun website sekolah, API aplikasi mobile, serta game
+        Visual Novel berbasis Ren'Py. Saya senang mengubah masalah nyata menjadi solusi digital yang
+        rapi dan mudah digunakan.
+      </p>
     </div>
-    <div class="mt-8">
-      <a class="btn" href="https://twitter.com/manuelernestog" target="_blank"> Let's connect!</a>
-      <a href="https://github.com/manuelernestog/astrofy" target="_blank" class="btn btn-outline ml-5">
-        Get This template
-      </a>
+    <div class="mt-8 flex flex-wrap gap-3">
+      <a class="btn" href="mailto:egaanzani77@gmail.com" target="_blank">Hubungi Saya</a>
+      <a href="/projects" class="btn btn-outline">Lihat Project</a>
+      <a href="/cv.pdf" download class="btn btn-outline">Download CV</a>
     </div>
   </div>
 
   <div>
-    <div class="text-3xl w-full font-bold mb-2">My last projects {"</>"}</div>
+    <h2 class="text-3xl w-full font-bold mb-2">Work Project</h2>
   </div>
 
   <HorizontalCard
-    title="Demo Project 1"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="NEW"
+    title="Game Edukasi Geometri Analitik"
+    desc="Game Visual Novel edukasi bertema Geometri Analitik Bidang, dibangun dengan Ren'Py dari tahap desain hingga pengujian Alpha dan Beta."
+    url="/projects/game-geometri"
+    target="_self"
+    badge="GAME"
+    headingLevel="h3"
   />
   <div class="divider my-0"></div>
   <HorizontalCard
-    title="Demo Project 2"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
+    title="Sistem Booking Service Honda Kita"
+    desc="Pengembangan API booking service yang menerima data dari aplikasi mobile ke sistem Honda Kita, disertai perbaikan tampilan web dan optimasi query database."
+    url="/projects/api-mobile-tdm"
+    target="_self"
+    badge="BACKEND"
+    headingLevel="h3"
   />
   <div class="divider my-0"></div>
   <HorizontalCard
-    title="Demo Project 3"
-    img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="FOSS"
+    title="Website Sekolah SMA Al Kautsar"
+    desc="Website sekolah berbasis CodeIgniter 3 yang memuat profil sekolah, data alumni, sejarah, dan dokumentasi kegiatan."
+    url="/projects/website-sekolah"
+    target="_self"
+    badge="WEB"
+    headingLevel="h3"
   />
 
   <div>
-    <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from blog</div>
+    <h2 class="text-3xl w-full font-bold mb-5 mt-10">Individual Project</h2>
   </div>
 
   {
-    last_posts.map((post) => (
+    individualProjects.map((project) => (
       <>
         <HorizontalCard
-          title={post.data.title}
-          img={post.data.heroImage}
-          desc={post.data.description}
-          url={"/blog/" + createSlug(post.data.title, post.slug)}
+          title={project.data.title}
+          desc={project.data.description}
+          url={`/individual-project/${project.slug}`}
           target="_self"
-          badge={post.data.badge}
+          badge={project.data.category}
+          headingLevel="h3"
         />
         <div class="divider my-0" />
       </>

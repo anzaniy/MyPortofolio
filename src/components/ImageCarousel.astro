@@ -1,0 +1,162 @@
+---
+interface Props {
+  images: string[];
+  alt?: string;
+}
+
+const { images = [], alt = "Screenshot" } = Astro.props;
+---
+
+<div
+  class="relative"
+  data-carousel
+  role="group"
+  aria-roledescription="carousel"
+  aria-label={`Dokumentasi ${alt}`}
+>
+  <div class="overflow-hidden rounded-lg border border-base-300 bg-base-200">
+    <div class="flex transition-transform duration-500 ease-out" data-track aria-live="polite">
+      {
+        images.map((image, index) => (
+          <div class="w-full shrink-0">
+            <img
+              src={image}
+              alt={`${alt} - screenshot ${index + 1}`}
+              class="w-full h-auto"
+              loading={index === 0 ? "eager" : "lazy"}
+            />
+          </div>
+        ))
+      }
+    </div>
+  </div>
+
+  {
+    images.length > 1 && (
+      <>
+        <button
+          type="button"
+          data-prev
+          aria-label="Screenshot sebelumnya"
+          class="btn btn-circle btn-sm absolute left-3 top-1/2 -translate-y-1/2 bg-base-100/80 border-base-300"
+        >
+          ‹
+        </button>
+        <button
+          type="button"
+          data-next
+          aria-label="Screenshot berikutnya"
+          class="btn btn-circle btn-sm absolute right-3 top-1/2 -translate-y-1/2 bg-base-100/80 border-base-300"
+        >
+          ›
+        </button>
+
+        <div class="flex justify-center mt-2" data-dots>
+          {images.map((_, index) => (
+            <button
+              type="button"
+              data-dot={index}
+              aria-label={`Ke screenshot ${index + 1}`}
+              class="group p-2.5"
+            >
+              <span
+                data-dot-bar
+                class:list={[
+                  "block h-2 rounded-full transition-all",
+                  index === 0 ? "w-6 bg-primary" : "w-2 bg-base-300 group-hover:bg-base-content/40",
+                ]}
+              />
+            </button>
+          ))}
+        </div>
+      </>
+    )
+  }
+</div>
+
+<script>
+  function initCarousels() {
+    document.querySelectorAll<HTMLElement>("[data-carousel]").forEach((root) => {
+      if (root.dataset.ready === "true") return;
+      root.dataset.ready = "true";
+
+      const track = root.querySelector<HTMLElement>("[data-track]");
+      const prev = root.querySelector<HTMLButtonElement>("[data-prev]");
+      const next = root.querySelector<HTMLButtonElement>("[data-next]");
+      const bars = Array.from(root.querySelectorAll<HTMLElement>("[data-dot-bar]"));
+      if (!track) return;
+
+      const slides = Array.from(track.children) as HTMLElement[];
+      if (slides.length === 0) return;
+
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const interval = 4000;
+
+      let index = 0;
+      let timer: number | undefined;
+      let resumeTimer: number | undefined;
+
+      const render = () => {
+        track.style.transform = `translateX(-${index * 100}%)`;
+        bars.forEach((bar, barIndex) => {
+          bar.classList.toggle("w-6", barIndex === index);
+          bar.classList.toggle("w-2", barIndex !== index);
+          bar.classList.toggle("bg-primary", barIndex === index);
+          bar.classList.toggle("bg-base-300", barIndex !== index);
+        });
+      };
+
+      const go = (nextIndex: number) => {
+        index = (nextIndex + slides.length) % slides.length;
+        render();
+      };
+
+      const stop = () => {
+        if (timer !== undefined) {
+          window.clearInterval(timer);
+          timer = undefined;
+        }
+      };
+
+      const start = () => {
+        stop();
+        if (reduceMotion || slides.length < 2) return;
+        timer = window.setInterval(() => go(index + 1), interval);
+      };
+
+      prev?.addEventListener("click", () => {
+        go(index - 1);
+        start();
+      });
+
+      next?.addEventListener("click", () => {
+        go(index + 1);
+        start();
+      });
+
+      bars.forEach((bar, barIndex) => {
+        bar.parentElement?.addEventListener("click", () => {
+          go(barIndex);
+          start();
+        });
+      });
+
+      root.addEventListener("mouseenter", stop);
+      root.addEventListener("mouseleave", start);
+      root.addEventListener("focusin", stop);
+      root.addEventListener("focusout", start);
+
+      root.addEventListener("touchstart", stop, { passive: true });
+      root.addEventListener("touchend", () => {
+        if (resumeTimer !== undefined) window.clearTimeout(resumeTimer);
+        resumeTimer = window.setTimeout(start, interval);
+      });
+
+      render();
+      start();
+    });
+  }
+
+  initCarousels();
+  document.addEventListener("astro:page-load", initCarousels);
+</script>

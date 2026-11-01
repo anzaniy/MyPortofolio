@@ -1,0 +1,24 @@
+---
+import { getCollection } from "astro:content";
+import ProjectDetail from "../../components/ProjectDetail.astro";
+
+export async function getStaticPaths() {
+  const projects = (await getCollection("projects")).filter(
+    (project) => project.data.kind === "individual"
+  );
+
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+---
+
+<ProjectDetail
+  project={project}
+  sideBarActiveItemID="individual"
+  backHref="/individual-project"
+  backLabel="Individual Project"
+/>

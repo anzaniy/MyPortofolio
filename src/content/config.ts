@@ -24,13 +24,30 @@ const storeSchema = z.object({
     heroImage: z.string().optional(),
 });
 
+const projectSchema = z.object({
+    title: z.string(),
+    description: z.string(),
+    category: z.enum(["Web Dev", "System Dev", "Game Dev"]),
+    kind: z.enum(["work", "individual"]).default("work"),
+    role: z.string().optional(),
+    period: z.string().optional(),
+    tech: z.array(z.string()).default([]),
+    gallery: z.array(z.string()).default([]),
+    repo: z.string().url().optional(),
+    demo: z.string().url().optional(),
+    order: z.number().default(0),
+});
+
 export type BlogSchema = z.infer<typeof blogSchema>;
 export type StoreSchema = z.infer<typeof storeSchema>;
+export type ProjectSchema = z.infer<typeof projectSchema>;
 
 const blogCollection = defineCollection({ schema: blogSchema });
 const storeCollection = defineCollection({ schema: storeSchema });
+const projectCollection = defineCollection({ schema: projectSchema });
 
 export const collections = {
     'blog': blogCollection,
-    'store': storeCollection
+    'store': storeCollection,
+    'projects': projectCollection
 }

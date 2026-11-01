@@ -1,26 +1,103 @@
 ---
+import { getCollection } from "astro:content";
+import type { CollectionEntry } from "astro:content";
+
 const { sideBarActiveItemID } = Astro.props;
-const activeClass = "bg-base-300"; // For primary color replace with `active` class
+
+const categoryOrder: Record<string, number> = {
+    "Web Dev": 0,
+    "System Dev": 1,
+    "Game Dev": 2,
+};
+
+const sortProjects = (projects: CollectionEntry<"projects">[]) =>
+    [...projects].sort(
+        (a, b) =>
+            (categoryOrder[a.data.category] ?? 99) - (categoryOrder[b.data.category] ?? 99) ||
+            a.data.order - b.data.order
+    );
+
+const allProjects = await getCollection("projects");
+const workProjects = sortProjects(allProjects.filter((project) => project.data.kind === "work"));
+const individualProjects = sortProjects(
+    allProjects.filter((project) => project.data.kind === "individual")
+);
 ---
 
-<ul class="menu grow shrink menu-md overflow-y-auto">
-    <li><a class="py-3 text-base" id="home" href="/">Home</a></li>
-    <li><a class="py-3 text-base" id="projects" href="/projects">Projects</a></li>
-    <li><a class="py-3 text-base" id="services" href="/services">Services</a></li>
-    <li><a class="py-3 text-base" id="store" href="/store">Store</a></li>
-    <li><a class="py-3 text-base" id="blog" href="/blog/">Blog</a></li>
-    <li><a class="py-3 text-base" id="cv" href="/cv">CV</a></li>
+<ul class="menu grow shrink menu-md overflow-y-auto" data-sidebar-menu data-active={sideBarActiveItemID}>
+    <li>
+        <a class="py-3 text-base" data-menu-item="home" href="/">Home</a>
+    </li>
+    <li>
+        <details open={sideBarActiveItemID === "work"}>
+            <summary class="py-3 text-base" data-menu-item="work">
+                <a href="/projects" class="grow">Work Project</a>
+            </summary>
+            <ul>
+                {
+                    workProjects.map((project) => (
+                        <li>
+                            <a class="py-2 text-sm project-link" href={`/projects/${project.slug}`}>
+                                {project.data.title}
+                            </a>
+                        </li>
+                    ))
+                }
+            </ul>
+        </details>
+    </li>
+    <li>
+        <details open={sideBarActiveItemID === "individual"}>
+            <summary class="py-3 text-base" data-menu-item="individual">
+                <a href="/individual-project" class="grow">Individual Project</a>
+            </summary>
+            <ul>
+                {
+                    individualProjects.map((project) => (
+                        <li>
+                            <a class="py-2 text-sm project-link" href={`/individual-project/${project.slug}`}>
+                                {project.data.title}
+                            </a>
+                        </li>
+                    ))
+                }
+            </ul>
+        </details>
+    </li>
+    <li><a class="py-3 text-base" data-menu-item="cv" href="/cv">CV</a></li>
     <li>
         <a
             class="py-3 text-base"
-            href="mailto:contact.manuelernestog@gmail.com"
+            href="mailto:egaanzani77@gmail.com"
             target="_blank"
-            referrerpolicy="no-referrer-when-downgrade">Contact</a
+            referrerpolicy="no-referrer-when-downgrade">Kontak</a
         >
     </li>
 </ul>
 
-<script define:vars={{ sideBarActiveItemID: sideBarActiveItemID, activeClass: activeClass }}>
-const activeItemElem = document.getElementById(sideBarActiveItemID);
-activeItemElem && activeItemElem.classList.add(activeClass);
+<script>
+const applyActiveState = () => {
+    const menu = document.querySelector<HTMLElement>("[data-sidebar-menu]");
+    if (!menu) return;
+
+    const activeId = menu.dataset.active;
+    const currentPath = window.location.pathname.replace(/\/$/, "");
+    const isProjectDetail =
+        currentPath.startsWith("/projects/") || currentPath.startsWith("/individual-project/");
+
+    menu.querySelectorAll<HTMLElement>("[data-menu-item]").forEach((item) => {
+        const isActive = item.dataset.menuItem === activeId;
+        item.classList.toggle("bg-base-300", isActive && !isProjectDetail);
+        item.classList.toggle("font-semibold", isActive);
+    });
+
+    menu.querySelectorAll<HTMLAnchorElement>(".project-link").forEach((link) => {
+        const isCurrent = link.getAttribute("href") === currentPath;
+        link.classList.toggle("bg-base-300", isCurrent);
+        link.classList.toggle("font-semibold", isCurrent);
+    });
+};
+
+applyActiveState();
+document.addEventListener("astro:page-load", applyActiveState);
 </script>

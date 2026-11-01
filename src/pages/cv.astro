@@ -3,90 +3,120 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import TimeLineElement from "../components/cv/TimeLine.astro";
 ---
 
-<BaseLayout title="Resume" sideBarActiveItemID="cv">
+<BaseLayout title="CV" sideBarActiveItemID="cv">
+  <h1 class="sr-only">CV Muhammad Ega Putra Anzani</h1>
+  <div class="mb-8">
+    <a href="/cv.pdf" download class="btn btn-outline"> Download CV (PDF) </a>
+  </div>
+
   <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Profile</div>
+    <h2 class="text-3xl w-full font-bold">Profil</h2>
   </div>
 
   <div class="mb-10 text-justify">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-    aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis
-    aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
-    cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    Sarjana Ilmu Komputer Universitas Lampung dengan IPK 3.71/4.00. Berpengalaman sebagai web developer,
+    system developer, asisten dosen, dan asisten peneliti. Terbiasa mengembangkan aplikasi web dengan
+    PHP (Laravel, CodeIgniter 3), Python (Odoo, Ren'Py), dan Java (Android Studio), serta mengelola
+    database SQL. Fokus pada pengembangan aplikasi web dan game edukasi yang terstruktur, teruji, dan
+    mudah digunakan.
   </div>
 
   <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Education</div>
+    <h2 class="text-3xl w-full font-bold">Pendidikan</h2>
   </div>
 
   <div class="time-line-container grid gap-4 mb-10">
     <TimeLineElement
-      title="Title Name"
-      subtitle="[start year] to [end year] at [Study Center Name], [City], [Country]"
-    />
-    <TimeLineElement
-      title="Title Name"
-      subtitle="[start year] to [end year] at [Study Center Name], [City], [Country]"
-    />
+      title="Sarjana Ilmu Komputer (S.Kom.) — Universitas Lampung"
+      subtitle="Sep 2020 – Feb 2026 · Bandar Lampung, Indonesia"
+    >
+      <span class="block">IPK 3.71/4.00</span>
+      <span class="block">Fokus pada pengembangan perangkat lunak, basis data, dan kecerdasan buatan.</span>
+    </TimeLineElement>
   </div>
 
   <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Experience</div>
+    <h2 class="text-3xl w-full font-bold">Pengalaman</h2>
   </div>
 
   <div class="time-line-container mb-10">
     <TimeLineElement
-      title="Job Title at Project or Company Name"
-      subtitle="From [Start Date] to [End Date] at [Company], [City], [Country]"
+      title="Asisten Peneliti — Universitas Lampung"
+      subtitle="Jan 2024 – Feb 2026 · Universitas Lampung, Bandar Lampung"
     >
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+      <span class="block">• Mengembangkan game edukasi berbasis Visual Novel bertema Geometri Analitik Bidang dari tahap awal hingga selesai menggunakan framework Ren'Py.</span>
+      <span class="block">• Menerapkan metodologi Game Development Life Cycle (GDLC) agar seluruh tahapan produksi berjalan terstruktur dan sesuai target.</span>
+      <span class="block">• Merancang dan mengeksekusi pengujian aplikasi melalui Alpha Testing dan Beta Testing.</span>
+      <span class="block">• Menyusun laporan akhir penelitian yang dipertanggungjawabkan sebagai dokumen penelitian resmi.</span>
     </TimeLineElement>
     <TimeLineElement
-      title="Job Title at Project or Company Name"
-      subtitle="From [Start Date] to [End Date] at [Company], [City], [Country]"
+      title="System Developer Intern — PT. Tunas Dwipa Matra (TDM)"
+      subtitle="Feb 2023 – Jul 2023 · Bandar Lampung, Indonesia"
     >
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+      <span class="block">• Mengembangkan API pada aplikasi mobile untuk menghubungkan data yang dimasukkan pengguna ke dalam sistem.</span>
+      <span class="block">• Mendesain dan memperbaiki tampilan sistem web yang bermasalah.</span>
+      <span class="block">• Mengoptimalkan fungsi API dan database agar pemanggilan query lebih efisien.</span>
     </TimeLineElement>
     <TimeLineElement
-      title="Job Title at Project or Company Name"
-      subtitle="From [Start Date] to [End Date] at [Company], [City], [Country]"
+      title="Web Developer Intern — SMA Al Kautsar"
+      subtitle="Des 2022 – Jan 2023 · Bandar Lampung, Indonesia"
     >
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+      <span class="block">• Mendesain dan mengembangkan website sekolah menggunakan framework CodeIgniter 3.</span>
+      <span class="block">• Mengumpulkan data alumni, sejarah sekolah, dan dokumentasi kegiatan sebagai konten website.</span>
+    </TimeLineElement>
+    <TimeLineElement
+      title="Asisten Dosen — Universitas Lampung"
+      subtitle="Agu 2021 – Jun 2023 · Universitas Lampung, Bandar Lampung"
+    >
+      <span class="block">• Melaksanakan proses belajar mengajar dan menyusun modul pembelajaran.</span>
+      <span class="block">• Membantu mahasiswa dalam pembelajaran serta penggunaan alat di laboratorium.</span>
+      <span class="block">• Bekerja sama dengan jurusan dalam penilaian dan pendistribusian nilai mahasiswa.</span>
+      <span class="block">• Mata kuliah yang diampu: Matematika Dasar, Matematika Diskrit, Komunikasi Data dan Jaringan Komputer, serta Kecerdasan Buatan.</span>
     </TimeLineElement>
   </div>
 
   <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Certifications</div>
+    <h2 class="text-3xl w-full font-bold">Organisasi</h2>
   </div>
 
-  <ul class="list-disc mx-6 mb-10 grid gap-2">
-    <li>
-      <a href="#" target="_blank"> Certification Name (with link)</a>
-    </li>
-    <li>
-      <a href="#" target="_blank"> Certification Name (with link)</a>
-    </li>
+  <div class="time-line-container mb-10">
+    <TimeLineElement
+      title="Kepala Bidang Multimedia — Lembaga Pers Mahasiswa Natural FMIPA Unila"
+      subtitle="Jan 2023 – Des 2023 · Bandar Lampung"
+    >
+      <span class="block">• Mengatur pengelolaan konten digital organisasi untuk kebutuhan komunikasi dan dokumentasi kegiatan.</span>
+    </TimeLineElement>
+    <TimeLineElement
+      title="Kepala Bidang Kaderisasi — Lembaga Pers Mahasiswa Natural FMIPA Unila"
+      subtitle="Jan 2022 – Des 2022 · Bandar Lampung"
+    >
+      <span class="block">• Merancang dan melaksanakan program regenerasi anggota, termasuk evaluasi proses perekrutan, pembinaan, dan pengembangan kualitas anggota.</span>
+    </TimeLineElement>
+  </div>
+
+  <div class="mb-5">
+    <h2 class="text-3xl w-full font-bold">Keahlian</h2>
+  </div>
+
+  <ul class="list-disc mx-6 grid gap-2 mb-10">
+    <li>Python (Odoo, Ren'Py)</li>
+    <li>PHP (Laravel, CodeIgniter 3)</li>
+    <li>Java (Android Studio)</li>
+    <li>SQL dan perancangan database</li>
+    <li>Git</li>
+    <li>Cloud Computing</li>
+    <li>Object-Oriented Programming (OOP)</li>
+    <li>Frontend, Backend, dan Fullstack Development</li>
   </ul>
 
   <div class="mb-5">
-    <div class="text-3xl w-full font-bold">Skills</div>
+    <h2 class="text-3xl w-full font-bold">Kontak</h2>
   </div>
 
-  <ul class="list-disc md:columns-5 columns-2 mx-6">
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
-    <li>Skill Name</li>
+  <ul class="list-disc mx-6 grid gap-2">
+    <li>Email: <a class="link" href="mailto:egaanzani77@gmail.com">egaanzani77@gmail.com</a></li>
+    <li>LinkedIn: <a class="link" href="https://www.linkedin.com/in/egaanzani" target="_blank">linkedin.com/in/egaanzani</a></li>
+    <li>GitHub: <a class="link" href="https://github.com/anzaniy" target="_blank">github.com/anzaniy</a></li>
+    <li>Lokasi: Bandar Lampung, Lampung, Indonesia</li>
   </ul>
 </BaseLayout>

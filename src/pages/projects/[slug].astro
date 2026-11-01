@@ -1,0 +1,32 @@
+---
+import { getCollection } from "astro:content";
+import ProjectDetail from "../../components/ProjectDetail.astro";
+
+export async function getStaticPaths() {
+  const projects = (await getCollection("projects")).filter(
+    (project) => project.data.kind === "work"
+  );
+
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+
+const { project } = Astro.props;
+
+const categorySlug: Record<string, string> = {
+  "Web Dev": "web-dev",
+  "System Dev": "system-dev",
+  "Game Dev": "game-dev",
+};
+const categoryAnchor = categorySlug[project.data.category];
+---
+
+<ProjectDetail
+  project={project}
+  sideBarActiveItemID="work"
+  backHref="/projects"
+  backLabel="Work Project"
+  categoryHref={categoryAnchor ? `/projects#${categoryAnchor}` : undefined}
+/>
