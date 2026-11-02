@@ -18,7 +18,7 @@ export const certificates: Certificate[] = [
         title: "Java Foundations",
         issuer: "Oracle Academy",
         type: "Sertifikat",
-        date: "24 Januari 2022",
+        date: "Agustus 2021 – Januari 2022",
         description:
             "Award of Course Completion atas penyelesaian seluruh coursework program Java Foundations, mencakup dasar pemrograman berorientasi objek, struktur kelas, inheritance, dan exception handling menggunakan Java.",
         image: "/images/certificates/oracle-academy-java-foundations.png",
