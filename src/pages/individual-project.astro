@@ -14,18 +14,15 @@ const projects = (await getCollection("projects"))
   <h2 class="text-3xl w-full font-bold mb-5">Individual Project</h2>
 
   {
-    projects.map((project, index) => (
-      <>
-        {index > 0 && <div class="divider my-0" />}
-        <HorizontalCard
-          title={project.data.title}
-          desc={project.data.description}
-          url={withBase(`/individual-project/${project.slug}`)}
-          target="_self"
-          badge={project.data.category}
-          headingLevel="h3"
-        />
-      </>
+    projects.map((project) => (
+      <HorizontalCard
+        title={project.data.title}
+        desc={project.data.description}
+        url={withBase(`/individual-project/${project.slug}`)}
+        target="_self"
+        badge={project.data.category}
+        headingLevel="h3"
+      />
     ))
   }
 </BaseLayout>

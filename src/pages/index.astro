@@ -10,7 +10,7 @@ const individualProjects = (await getCollection("projects"))
 ---
 
 <BaseLayout sideBarActiveItemID="home">
-  <div class="pb-12 mt-5">
+  <div class="rounded-lg bg-base-200 overflow-hidden border border-base-300 p-6 sm:p-8 mt-5 mb-10">
     <div class="text-xl py-1">Halo 👋</div>
     <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold">Saya Muhammad Ega Putra Anzani</h1>
     <div class="text-xl sm:text-2xl lg:text-3xl py-3 font-bold">Ilmu Komputer · Web &amp; Game Developer</div>
@@ -30,7 +30,7 @@ const individualProjects = (await getCollection("projects"))
   </div>
 
   <div>
-    <h2 class="text-3xl w-full font-bold mb-2">Work Project</h2>
+    <h2 class="text-3xl w-full font-bold mb-5">Work Project</h2>
   </div>
 
   <HorizontalCard
@@ -41,7 +41,6 @@ const individualProjects = (await getCollection("projects"))
     badge="GAME"
     headingLevel="h3"
   />
-  <div class="divider my-0"></div>
   <HorizontalCard
     title="Sistem Booking Service Honda Kita"
     desc="Pengembangan API booking service yang menerima data dari aplikasi mobile ke sistem Honda Kita, disertai perbaikan tampilan web dan optimasi query database."
@@ -50,7 +49,6 @@ const individualProjects = (await getCollection("projects"))
     badge="BACKEND"
     headingLevel="h3"
   />
-  <div class="divider my-0"></div>
   <HorizontalCard
     title="Website Sekolah SMA Al Kautsar"
     desc="Website sekolah berbasis CodeIgniter 3 yang memuat profil sekolah, data alumni, sejarah, dan dokumentasi kegiatan."
@@ -61,22 +59,19 @@ const individualProjects = (await getCollection("projects"))
   />
 
   <div>
-    <h2 class="text-3xl w-full font-bold mb-5 mt-10">Individual Project</h2>
+    <h2 class="text-3xl w-full font-bold mb-5 mt-12">Individual Project</h2>
   </div>
 
   {
     individualProjects.map((project) => (
-      <>
-        <HorizontalCard
-          title={project.data.title}
-          desc={project.data.description}
-          url={withBase(`/individual-project/${project.slug}`)}
-          target="_self"
-          badge={project.data.category}
-          headingLevel="h3"
-        />
-        <div class="divider my-0" />
-      </>
+      <HorizontalCard
+        title={project.data.title}
+        desc={project.data.description}
+        url={withBase(`/individual-project/${project.slug}`)}
+        target="_self"
+        badge={project.data.category}
+        headingLevel="h3"
+      />
     ))
   }
 </BaseLayout>
