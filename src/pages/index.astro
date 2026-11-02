@@ -9,7 +9,7 @@ const individualProjects = (await getCollection("projects"))
   .sort((a, b) => a.data.order - b.data.order);
 ---
 
-<BaseLayout sideBarActiveItemID="home">
+<BaseLayout sideBarActiveItemID="home" wide>
   <div class="rounded-lg bg-base-200 overflow-hidden border border-base-300 p-6 sm:p-8 mt-5 mb-10">
     <div class="text-xl py-1">Halo 👋</div>
     <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold leading-tight lg:whitespace-nowrap">Saya Muhammad Ega Putra Anzani</h1>
@@ -26,49 +26,51 @@ const individualProjects = (await getCollection("projects"))
     </div>
   </div>
 
-  <div>
-    <h2 class="text-3xl w-full font-bold mb-5">Work Project</h2>
+  <div class="lg:max-w-[900px] lg:mx-auto">
+    <div>
+      <h2 class="text-3xl w-full font-bold mb-5">Work Project</h2>
+    </div>
+
+    <HorizontalCard
+      title="Game Edukasi Geometri Analitik"
+      desc="Game Visual Novel edukasi bertema Geometri Analitik Bidang, dibangun dengan Ren'Py dari tahap desain hingga pengujian Alpha dan Beta."
+      url={withBase("/projects/game-geometri")}
+      target="_self"
+      badge="GAME"
+      headingLevel="h3"
+    />
+    <HorizontalCard
+      title="Sistem Booking Service Honda Kita"
+      desc="Pengembangan API booking service yang menerima data dari aplikasi mobile ke sistem Honda Kita, disertai perbaikan tampilan web dan optimasi query database."
+      url={withBase("/projects/api-mobile-tdm")}
+      target="_self"
+      badge="BACKEND"
+      headingLevel="h3"
+    />
+    <HorizontalCard
+      title="Website Sekolah SMA Al Kautsar"
+      desc="Website sekolah berbasis CodeIgniter 3 yang memuat profil sekolah, data alumni, sejarah, dan dokumentasi kegiatan."
+      url={withBase("/projects/website-sekolah")}
+      target="_self"
+      badge="WEB"
+      headingLevel="h3"
+    />
+
+    <div>
+      <h2 class="text-3xl w-full font-bold mb-5 mt-12">Individual Project</h2>
+    </div>
+
+    {
+      individualProjects.map((project) => (
+        <HorizontalCard
+          title={project.data.title}
+          desc={project.data.description}
+          url={withBase(`/individual-project/${project.slug}`)}
+          target="_self"
+          badge={project.data.category}
+          headingLevel="h3"
+        />
+      ))
+    }
   </div>
-
-  <HorizontalCard
-    title="Game Edukasi Geometri Analitik"
-    desc="Game Visual Novel edukasi bertema Geometri Analitik Bidang, dibangun dengan Ren'Py dari tahap desain hingga pengujian Alpha dan Beta."
-    url={withBase("/projects/game-geometri")}
-    target="_self"
-    badge="GAME"
-    headingLevel="h3"
-  />
-  <HorizontalCard
-    title="Sistem Booking Service Honda Kita"
-    desc="Pengembangan API booking service yang menerima data dari aplikasi mobile ke sistem Honda Kita, disertai perbaikan tampilan web dan optimasi query database."
-    url={withBase("/projects/api-mobile-tdm")}
-    target="_self"
-    badge="BACKEND"
-    headingLevel="h3"
-  />
-  <HorizontalCard
-    title="Website Sekolah SMA Al Kautsar"
-    desc="Website sekolah berbasis CodeIgniter 3 yang memuat profil sekolah, data alumni, sejarah, dan dokumentasi kegiatan."
-    url={withBase("/projects/website-sekolah")}
-    target="_self"
-    badge="WEB"
-    headingLevel="h3"
-  />
-
-  <div>
-    <h2 class="text-3xl w-full font-bold mb-5 mt-12">Individual Project</h2>
-  </div>
-
-  {
-    individualProjects.map((project) => (
-      <HorizontalCard
-        title={project.data.title}
-        desc={project.data.description}
-        url={withBase(`/individual-project/${project.slug}`)}
-        target="_self"
-        badge={project.data.category}
-        headingLevel="h3"
-      />
-    ))
-  }
 </BaseLayout>
