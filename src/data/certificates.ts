@@ -1,7 +1,7 @@
 export interface Certificate {
     title: string;
     issuer: string;
-    type: "Sertifikasi" | "Pelatihan";
+    type: "Sertifikat" | "Pelatihan";
     date: string;
     period?: string;
     credentialLabel?: string;
@@ -17,7 +17,7 @@ export const certificates: Certificate[] = [
     {
         title: "Java Foundations",
         issuer: "Oracle Academy",
-        type: "Sertifikasi",
+        type: "Sertifikat",
         date: "24 Januari 2022",
         description:
             "Award of Course Completion atas penyelesaian seluruh coursework program Java Foundations, mencakup dasar pemrograman berorientasi objek, struktur kelas, inheritance, dan exception handling menggunakan Java.",
