@@ -1,0 +1,64 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { certificates } from "../data/certificates";
+import { withBase } from "../config";
+---
+
+<BaseLayout title="Sertifikasi & Pelatihan" sideBarActiveItemID="certificates">
+  <h1 class="sr-only">Sertifikasi & Pelatihan Muhammad Ega Putra Anzani</h1>
+  <h2 class="text-3xl w-full font-bold mb-2">Sertifikasi & Pelatihan</h2>
+  <p class="mb-8 text-base-content/70">
+    Sertifikat dan pelatihan yang telah saya selesaikan, lengkap dengan dokumen aslinya.
+  </p>
+
+  <div class="grid gap-8">
+    {
+      certificates.map((cert) => (
+        <article class="rounded-lg bg-base-200 overflow-hidden border border-base-300">
+          <a
+            href={withBase(cert.image)}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="block bg-base-100"
+            aria-label={`Lihat sertifikat ${cert.title}`}
+          >
+            <img
+              src={withBase(cert.image)}
+              alt={cert.imageAlt}
+              width={cert.width}
+              height={cert.height}
+              loading="lazy"
+              decoding="async"
+              class="w-full h-auto"
+            />
+          </a>
+          <div class="p-5">
+            <h3 class="text-xl font-bold mb-1">
+              {cert.title}
+              <span class="badge badge-secondary align-middle ml-2">{cert.type}</span>
+            </h3>
+            <p class="font-semibold">{cert.issuer}</p>
+            <p class="text-sm font-light mb-3">
+              {cert.date}
+              {cert.period && ` · ${cert.period}`}
+            </p>
+            <p class="text-justify">{cert.description}</p>
+            {cert.credentialId && (
+              <p class="text-sm mt-3 opacity-70">
+                {cert.credentialLabel}: {cert.credentialId}
+              </p>
+            )}
+            <a
+              class="btn btn-outline btn-sm mt-4"
+              href={withBase(cert.image)}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Lihat sertifikat
+            </a>
+          </div>
+        </article>
+      ))
+    }
+  </div>
+</BaseLayout>
