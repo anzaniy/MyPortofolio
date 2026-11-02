@@ -6,62 +6,45 @@ import { withBase } from "../config";
 
 <BaseLayout title="Sertifikat Pelatihan" sideBarActiveItemID="certificates">
   <h1 class="sr-only">Sertifikat Pelatihan Muhammad Ega Putra Anzani</h1>
-  <h2 class="text-3xl w-full font-bold mb-2">Sertifikat Pelatihan</h2>
-  <p class="mb-8 text-base-content/70">
-    Sertifikat dan pelatihan yang telah saya selesaikan, lengkap dengan dokumen aslinya.
-  </p>
+  <h2 class="text-3xl w-full font-bold mb-8">Sertifikat Pelatihan</h2>
 
-  <div class="grid gap-8">
+  <div class="grid gap-6">
     {
       certificates.map((cert) => (
-        <details class="rounded-lg bg-base-200 overflow-hidden border border-base-300">
-          <summary class="cursor-pointer list-none [&::-webkit-details-marker]:hidden">
-            <div class="p-5">
-              <h3 class="text-xl font-bold mb-1">
-                {cert.title}
-                <span class="badge badge-secondary align-middle ml-2">{cert.type}</span>
-              </h3>
-              <p class="font-semibold">{cert.issuer}</p>
-              <p class="text-sm font-light">
-                {cert.date}
-                {cert.period && ` · ${cert.period}`}
-              </p>
-              <span class="btn btn-outline btn-sm mt-4">Lihat sertifikat</span>
-            </div>
+        <details class="group rounded-lg bg-base-200 overflow-hidden border border-base-300">
+          <summary class="flex items-center justify-between gap-4 p-5 cursor-pointer list-none select-none hover:bg-base-300/50 [&::-webkit-details-marker]:hidden">
+            <h3 class="text-xl font-bold">{cert.title}</h3>
+            <svg
+              class="shrink-0 transition-transform duration-200 group-open:rotate-180"
+              width="18"
+              height="18"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
           </summary>
           <a
             href={withBase(cert.image)}
             target="_blank"
             rel="noopener noreferrer"
             class="block bg-base-100 border-t border-base-300"
-            aria-label={`Lihat sertifikat ${cert.title}`}
+            aria-label={`Buka sertifikat ${cert.title} di tab baru`}
           >
             <img
               src={withBase(cert.image)}
               alt={cert.imageAlt}
               width={cert.width}
               height={cert.height}
-              loading="lazy"
               decoding="async"
               class="w-full h-auto"
             />
           </a>
-          <div class="p-5">
-            <p class="text-justify">{cert.description}</p>
-            {cert.credentialId && (
-              <p class="text-sm mt-3 opacity-70">
-                {cert.credentialLabel}: {cert.credentialId}
-              </p>
-            )}
-            <a
-              class="btn btn-outline btn-sm mt-4"
-              href={withBase(cert.image)}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Buka gambar penuh
-            </a>
-          </div>
         </details>
       ))
     }
