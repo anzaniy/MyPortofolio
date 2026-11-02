@@ -1,9 +1,0 @@
-﻿<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
-  <rect width="1280" height="720" fill="#f1f5f9"/>
-  <rect x="40" y="40" width="1200" height="640" rx="16" fill="#e2e8f0" stroke="#94a3b8" stroke-width="2" stroke-dasharray="12 10"/>
-  <circle cx="640" cy="286" r="54" fill="#cbd5e1"/>
-  <path d="M596 312 l30 -38 24 28 20 -20 34 34 z" fill="#64748b"/>
-  <text x="640" y="410" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="36" font-weight="bold" fill="#475569">Screenshot 1</text>
-  <text x="640" y="458" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="26" fill="#64748b">Individual Project</text>
-  <text x="640" y="504" text-anchor="middle" font-family="Segoe UI, Arial, sans-serif" font-size="20" fill="#94a3b8">Placeholder - ganti dengan screenshot asli</text>
-</svg>
