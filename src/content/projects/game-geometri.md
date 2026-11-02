@@ -10,6 +10,7 @@ gallery:
   - "/images/projects/game-geometri-2.png"
   - "/images/projects/game-geometri-3.png"
 repo: "https://github.com/anzaniy/IIL"
+demo: "https://raanzani.itch.io/intertwining-infinity-line"
 order: 1
 ---
 
