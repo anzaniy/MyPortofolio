@@ -4,7 +4,7 @@ description: "Pengembangan API booking service yang menerima data dari aplikasi 
 category: "System Dev"
 role: "System Developer Intern"
 period: "Feb 2023 - Jul 2023"
-tech: ["REST API", "Database", "Mobile Integration", "Web"]
+tech: ["Odoo 10", "Python", "PostgreSQL", "REST API"]
 gallery:
   - "/images/projects/api-mobile-tdm-1.png"
   - "/images/projects/api-mobile-tdm-2.png"
@@ -38,7 +38,8 @@ Aplikasi mobile membutuhkan jalur komunikasi yang stabil dengan sistem utama saa
 
 | Bagian | Teknologi |
 | --- | --- |
-| Layanan | REST API |
-| Database | SQL |
-| Klien | Aplikasi mobile |
+| Platform | Odoo 10 |
+| Bahasa | Python |
+| Basis data | PostgreSQL |
+| Integrasi | REST API ke aplikasi mobile |
 | Lainnya | Perbaikan antarmuka web |
