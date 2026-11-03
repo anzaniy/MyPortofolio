@@ -1,5 +1,6 @@
 ---
 import { withBase } from "../config";
+import LanguageToggle from "./LanguageToggle.astro";
 ---
 <div
   class="sticky lg:hidden top-0 z-30 flex h-16 w-full justify-center bg-opacity-90 backdrop-blur transition-all duration-100 bg-base-100 text-base-content shadow-sm"
@@ -15,6 +16,8 @@ import { withBase } from "../config";
     <div class="navbar-center">
       <a class="btn btn-ghost normal-case text-base sm:text-lg" href={withBase('/')}>Muhammad Ega Putra Anzani</a>
     </div>
-    <div class="navbar-end"></div>
+    <div class="navbar-end">
+      <LanguageToggle />
+    </div>
   </div>
 </div>

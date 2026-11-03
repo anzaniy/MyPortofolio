@@ -7,18 +7,20 @@ export async function getStaticPaths() {
   const projects = (await getCollection("projects")).filter(
     (project) => project.data.kind === "individual"
   );
+  const projectsEn = await getCollection("projects-en");
 
   return projects.map((project) => ({
     params: { slug: project.slug },
-    props: { project },
+    props: { project, projectEn: projectsEn.find((item) => item.slug === project.slug) },
   }));
 }
 
-const { project } = Astro.props;
+const { project, projectEn } = Astro.props;
 ---
 
 <ProjectDetail
   project={project}
+  projectEn={projectEn}
   sideBarActiveItemID="individual"
   backHref={withBase("/individual-project")}
   backLabel="Individual Project"

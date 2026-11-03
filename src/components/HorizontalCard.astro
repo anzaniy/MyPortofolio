@@ -1,5 +1,5 @@
 ---
-const { title, img, desc, url, badge, tags, target = "_blank", headingLevel = "h2" } = Astro.props;
+const { title, titleId, img, desc, descId, url, badge, tags, target = "_blank", headingLevel = "h2" } = Astro.props;
 import { Image } from "astro:assets";
 import { withBase } from "../config";
 const tag_url = url.split("/").slice(0, -1).join("/") + "/tag";
@@ -20,16 +20,16 @@ const imageSrc = img && !/^https?:\/\//.test(img) ? withBase(img) : img;
             height={422}
             format="webp"
             alt={title}
-            class="max-w-full md:max-w-[13rem] rounded-lg"
+            class="w-full md:w-[13rem] h-auto rounded-lg"
           />
         )
       }
       <div class="grow w-full">
         <Heading class="text-xl font-bold">
-          {title}
+          <span data-text-id={titleId}>{title}</span>
           {badge && <div class="badge badge-secondary mx-2">{badge}</div>}
         </Heading>
-        <p class="py-1 text-1xl">{desc}</p>
+        <p class="py-1 text-1xl" data-text-id={descId}>{desc}</p>
         <div class="card-actions justify-end">
           {
             tags &&

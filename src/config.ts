@@ -2,7 +2,7 @@
 // You can import this data from anywhere in your site by using the `import` keyword.
 
 export const SITE_TITLE = 'Muhammad Ega Putra Anzani | Portfolio';
-export const SITE_DESCRIPTION = 'Portofolio Muhammad Ega Putra Anzani, Sarjana Ilmu Komputer Universitas Lampung. Web developer dan game developer dengan pengalaman di bidang backend, frontend, dan pengembangan game edukasi.';
+export const SITE_DESCRIPTION = 'Portfolio of Muhammad Ega Putra Anzani, Computer Science graduate from Lampung University. Web and game developer with experience in backend, frontend, and educational game development.';
 export const GENERATE_SLUG_FROM_TITLE = true
 export const TRANSITION_API = true
 

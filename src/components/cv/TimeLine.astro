@@ -1,5 +1,7 @@
 ---
-const { title, subtitle } = Astro.props;
+import Dual from "../Dual.astro";
+
+const { title, titleId, subtitle, subtitleId } = Astro.props;
 ---
 
 <div class="flex">
@@ -8,8 +10,8 @@ const { title, subtitle } = Astro.props;
     <span class="education__line bg-primary block h-full w-[2px] translate-x-[7px]"></span>
   </div>
   <div class="experience__data bd-grid px-5">
-    <h3 class="font-semibold mb-1">{title}</h3>
-    <span class="font-light text-sm">{subtitle}</span>
+    <h3 class="font-semibold mb-1"><Dual en={title} id={titleId ?? title} /></h3>
+    <span class="font-light text-sm"><Dual en={subtitle} id={subtitleId ?? subtitle} /></span>
     <p class="my-2 text-justify">
       <slot />
     </p>

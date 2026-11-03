@@ -3,6 +3,7 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import SideBar from "../components/SideBar.astro";
+import LanguageScript from "../components/LanguageScript.astro";
 import { ViewTransitions } from "astro:transitions";
 
 import { SITE_TITLE, SITE_DESCRIPTION, TRANSITION_API } from "../config";
@@ -19,12 +20,18 @@ const {
 ---
 
 <!doctype html>
-<html lang="id" data-theme="lofi">
+<html lang="en" data-lang="en" data-theme="lofi">
   <head>
+    <script is:inline>
+      try {
+        document.documentElement.dataset.lang = localStorage.getItem("lang") === "id" ? "id" : "en";
+      } catch (e) {}
+    </script>
     <BaseHead title={title} description={description} image={image} , ogType={ogType} />
     {TRANSITION_API && <ViewTransitions />}
   </head>
   <body>
+    <LanguageScript />
     <div class="bg-base-100 drawer lg:drawer-open">
       <input id="my-drawer" type="checkbox" class="drawer-toggle" />
       <div class="drawer-content bg-base-100 flex flex-col min-h-screen">

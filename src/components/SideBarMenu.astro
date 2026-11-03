@@ -2,6 +2,7 @@
 import { getCollection } from "astro:content";
 import type { CollectionEntry } from "astro:content";
 import { withBase } from "../config";
+import Dual from "./Dual.astro";
 
 const { sideBarActiveItemID } = Astro.props;
 
@@ -19,6 +20,10 @@ const sortProjects = (projects: CollectionEntry<"projects">[]) =>
     );
 
 const allProjects = await getCollection("projects");
+const allProjectsEn = await getCollection("projects-en");
+const enTitles = new Map(allProjectsEn.map((project) => [project.slug, project.data.title]));
+const projectTitle = (project: CollectionEntry<"projects">) =>
+    enTitles.get(project.slug) ?? project.data.title;
 const workProjects = sortProjects(allProjects.filter((project) => project.data.kind === "work"));
 const individualProjects = sortProjects(
     allProjects.filter((project) => project.data.kind === "individual")
@@ -39,7 +44,7 @@ const individualProjects = sortProjects(
                     workProjects.map((project) => (
                         <li>
                             <a class="py-2 text-sm project-link" href={withBase(`/projects/${project.slug}`)}>
-                                {project.data.title}
+                                <Dual en={projectTitle(project)} id={project.data.title} />
                             </a>
                         </li>
                     ))
@@ -57,7 +62,7 @@ const individualProjects = sortProjects(
                     individualProjects.map((project) => (
                         <li>
                             <a class="py-2 text-sm project-link" href={withBase(`/individual-project/${project.slug}`)}>
-                                {project.data.title}
+                                <Dual en={projectTitle(project)} id={project.data.title} />
                             </a>
                         </li>
                     ))
@@ -67,7 +72,7 @@ const individualProjects = sortProjects(
     </li>
     <li>
         <a class="py-3 text-base" data-menu-item="certificates" href={withBase('/sertifikasi')}>
-            Sertifikat Pelatihan
+            <Dual en="Training Certificates" id="Sertifikat Pelatihan" />
         </a>
     </li>
     <li><a class="py-3 text-base" data-menu-item="cv" href={withBase('/cv')}>CV</a></li>
@@ -76,7 +81,8 @@ const individualProjects = sortProjects(
             class="py-3 text-base"
             href="mailto:egaanzani77@gmail.com"
             target="_blank"
-            referrerpolicy="no-referrer-when-downgrade">Kontak</a
+            referrerpolicy="no-referrer-when-downgrade"
+            ><Dual en="Contact" id="Kontak" /></a
         >
     </li>
 </ul>

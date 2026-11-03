@@ -1,14 +1,18 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
+import Dual from "../components/Dual.astro";
 import { certificates } from "../data/certificates";
 import { withBase } from "../config";
 ---
 
-<BaseLayout title="Sertifikat Pelatihan" sideBarActiveItemID="certificates">
-  <h1 class="sr-only">Sertifikat Pelatihan Muhammad Ega Putra Anzani</h1>
-  <h2 class="text-3xl w-full font-bold mb-2">Sertifikat Pelatihan</h2>
+<BaseLayout title="Training Certificates" sideBarActiveItemID="certificates">
+  <h1 class="sr-only">Training Certificates of Muhammad Ega Putra Anzani</h1>
+  <h2 class="text-3xl w-full font-bold mb-2"><Dual en="Training Certificates" id="Sertifikat Pelatihan" /></h2>
   <p class="mb-8 text-base-content/70">
-    Sertifikat dan pelatihan yang telah saya selesaikan, lengkap dengan dokumen aslinya.
+    <Dual
+      en="Certificates and training I have completed, along with the original documents."
+      id="Sertifikat dan pelatihan yang telah saya selesaikan, lengkap dengan dokumen aslinya."
+    />
   </p>
 
   <div class="grid gap-6">
@@ -18,10 +22,10 @@ import { withBase } from "../config";
           <summary class="flex items-center justify-between gap-4 p-5 cursor-pointer list-none select-none hover:bg-base-300/50 [&::-webkit-details-marker]:hidden">
             <div>
               <h3 class="text-xl font-bold">{cert.title}</h3>
-              <p class="font-semibold">{cert.issuer}</p>
+              <p class="font-semibold"><Dual en={cert.issuer.en} id={cert.issuer.id} /></p>
               <p class="text-sm font-light">
-                {cert.date}
-                {cert.period && ` · ${cert.period}`}
+                <Dual en={cert.date.en} id={cert.date.id} />
+                {cert.period && <Dual en={` · ${cert.period.en}`} id={` · ${cert.period.id}`} />}
               </p>
             </div>
             <svg
@@ -44,11 +48,11 @@ import { withBase } from "../config";
             target="_blank"
             rel="noopener noreferrer"
             class="block bg-base-100 border-t border-base-300"
-            aria-label={`Buka sertifikat ${cert.title} di tab baru`}
+            aria-label={`Open ${cert.title} certificate in a new tab`}
           >
             <img
               src={withBase(cert.image)}
-              alt={cert.imageAlt}
+              alt={cert.imageAlt.en}
               width={cert.width}
               height={cert.height}
               decoding="async"
@@ -56,10 +60,10 @@ import { withBase } from "../config";
             />
           </a>
           <div class="p-5">
-            <p class="text-justify">{cert.description}</p>
+            <p class="text-justify"><Dual en={cert.description.en} id={cert.description.id} /></p>
             {cert.credentialId && (
               <p class="text-sm mt-3 opacity-70">
-                {cert.credentialLabel}: {cert.credentialId}
+                {cert.credentialLabel && <Dual en={cert.credentialLabel.en} id={cert.credentialLabel.id} />}: {cert.credentialId}
               </p>
             )}
             <a
@@ -68,7 +72,7 @@ import { withBase } from "../config";
               target="_blank"
               rel="noopener noreferrer"
             >
-              Buka gambar penuh
+              <Dual en="Open full image" id="Buka gambar penuh" />
             </a>
           </div>
         </details>

@@ -1,6 +1,7 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import TimeLineElement from "../components/cv/TimeLine.astro";
+import Dual from "../components/Dual.astro";
 import { withBase } from "../config";
 ---
 
@@ -11,126 +12,146 @@ import { withBase } from "../config";
   </div>
 
   <div class="mb-5">
-    <h2 class="text-3xl w-full font-bold">Profil</h2>
+    <h2 class="text-3xl w-full font-bold"><Dual en="Profile" id="Profil" /></h2>
   </div>
 
   <div class="mb-10 text-justify">
-    Sarjana Ilmu Komputer Universitas Lampung. Berpengalaman sebagai web developer,
-    system developer, asisten dosen, dan asisten peneliti. Terbiasa mengembangkan aplikasi web dengan
-    PHP (Laravel, CodeIgniter 3), Python (Odoo, Ren'Py), dan Java (Android Studio), serta mengelola
-    database SQL. Fokus pada pengembangan aplikasi web dan game edukasi yang terstruktur, teruji, dan
-    mudah digunakan.
+    <Dual
+      en="Computer Science graduate from Lampung University. Experienced as a web developer, system developer, lecturer assistant, and research assistant. Comfortable building web applications with PHP (Laravel, CodeIgniter 3), Python (Odoo, Ren'Py), and Java (Android Studio), and managing SQL databases. Focused on building structured, well-tested, and easy-to-use web applications and educational games."
+      id="Sarjana Ilmu Komputer Universitas Lampung. Berpengalaman sebagai web developer, system developer, asisten dosen, dan asisten peneliti. Terbiasa mengembangkan aplikasi web dengan PHP (Laravel, CodeIgniter 3), Python (Odoo, Ren'Py), dan Java (Android Studio), serta mengelola database SQL. Fokus pada pengembangan aplikasi web dan game edukasi yang terstruktur, teruji, dan mudah digunakan."
+    />
   </div>
 
   <div class="mb-5">
-    <h2 class="text-3xl w-full font-bold">Pendidikan</h2>
+    <h2 class="text-3xl w-full font-bold"><Dual en="Education" id="Pendidikan" /></h2>
   </div>
 
   <div class="time-line-container grid gap-4 mb-10">
     <TimeLineElement
-      title="Sarjana Ilmu Komputer (S.Kom.), Universitas Lampung"
+      title="Bachelor of Computer Science (S.Kom.), Lampung University"
+      titleId="Sarjana Ilmu Komputer (S.Kom.), Universitas Lampung"
       subtitle="Sep 2020 - Feb 2026 · Bandar Lampung, Indonesia"
+      subtitleId="Sep 2020 - Feb 2026 · Bandar Lampung, Indonesia"
     >
-      <span class="block">IPK 3.71/4.00</span>
-      <span class="block">Skripsi: Pengembangan Game Visual Novel dengan Metode GDLC (Studi Kasus pada Materi Geometri Analitik Bidang).</span>
+      <Dual as="span" class="block" en="GPA 3.71/4.00" id="IPK 3.71/4.00" />
+      <Dual
+        as="span"
+        class="block"
+        en="Thesis: Developing a Visual Novel Game with the GDLC Method (Case Study on Plane Analytic Geometry Material)."
+        id="Skripsi: Pengembangan Game Visual Novel dengan Metode GDLC (Studi Kasus pada Materi Geometri Analitik Bidang)."
+      />
     </TimeLineElement>
   </div>
 
   <div class="mb-5">
-    <h2 class="text-3xl w-full font-bold">Pengalaman</h2>
+    <h2 class="text-3xl w-full font-bold"><Dual en="Experience" id="Pengalaman" /></h2>
   </div>
 
   <div class="time-line-container mb-10">
     <TimeLineElement
-      title="Asisten Peneliti, Universitas Lampung"
-      subtitle="Jan 2024 - Feb 2026 · Universitas Lampung, Bandar Lampung"
+      title="Research Assistant, Lampung University"
+      titleId="Asisten Peneliti, Universitas Lampung"
+      subtitle="Jan 2024 - Feb 2026 · Lampung University, Bandar Lampung"
+      subtitleId="Jan 2024 - Feb 2026 · Universitas Lampung, Bandar Lampung"
     >
-      <span class="block">• Mengembangkan game edukasi berbasis Visual Novel bertema Geometri Analitik Bidang dari tahap awal hingga selesai menggunakan framework Ren'Py.</span>
-      <span class="block">• Menerapkan metodologi Game Development Life Cycle (GDLC) agar seluruh tahapan produksi berjalan terstruktur dan sesuai target.</span>
-      <span class="block">• Merancang dan mengeksekusi pengujian aplikasi melalui Alpha Testing dan Beta Testing.</span>
-      <span class="block">• Menyusun laporan akhir penelitian yang dipertanggungjawabkan sebagai dokumen penelitian resmi.</span>
+      <Dual as="span" class="block" en="• Developed an educational Visual Novel game about Plane Analytic Geometry from start to finish using the Ren'Py framework." id="• Mengembangkan game edukasi berbasis Visual Novel bertema Geometri Analitik Bidang dari tahap awal hingga selesai menggunakan framework Ren'Py." />
+      <Dual as="span" class="block" en="• Applied the Game Development Life Cycle (GDLC) methodology so every production stage ran in a structured way and hit its target." id="• Menerapkan metodologi Game Development Life Cycle (GDLC) agar seluruh tahapan produksi berjalan terstruktur dan sesuai target." />
+      <Dual as="span" class="block" en="• Designed and executed application testing through Alpha Testing and Beta Testing." id="• Merancang dan mengeksekusi pengujian aplikasi melalui Alpha Testing dan Beta Testing." />
+      <Dual as="span" class="block" en="• Wrote the final research report, which was defended as the official research document." id="• Menyusun laporan akhir penelitian yang dipertanggungjawabkan sebagai dokumen penelitian resmi." />
     </TimeLineElement>
     <TimeLineElement
       title="System Developer Intern, PT. Tunas Dwipa Matra (TDM)"
+      titleId="System Developer Intern, PT. Tunas Dwipa Matra (TDM)"
       subtitle="Feb 2023 - Jul 2023 · Bandar Lampung, Indonesia"
+      subtitleId="Feb 2023 - Jul 2023 · Bandar Lampung, Indonesia"
     >
-      <span class="block">• Mengembangkan API pada aplikasi mobile untuk menghubungkan data yang dimasukkan pengguna ke dalam sistem.</span>
-      <span class="block">• Mendesain dan memperbaiki tampilan sistem web yang bermasalah.</span>
-      <span class="block">• Mengoptimalkan fungsi API dan database agar pemanggilan query lebih efisien.</span>
+      <Dual as="span" class="block" en="• Developed APIs in the mobile app to connect user-entered data with the system." id="• Mengembangkan API pada aplikasi mobile untuk menghubungkan data yang dimasukkan pengguna ke dalam sistem." />
+      <Dual as="span" class="block" en="• Designed and fixed broken web system interfaces." id="• Mendesain dan memperbaiki tampilan sistem web yang bermasalah." />
+      <Dual as="span" class="block" en="• Optimized API and database functions so queries run more efficiently." id="• Mengoptimalkan fungsi API dan database agar pemanggilan query lebih efisien." />
     </TimeLineElement>
     <TimeLineElement
       title="Web Developer Intern, SMA Al Kautsar"
-      subtitle="Des 2022 - Jan 2023 · Bandar Lampung, Indonesia"
+      titleId="Web Developer Intern, SMA Al Kautsar"
+      subtitle="Dec 2022 - Jan 2023 · Bandar Lampung, Indonesia"
+      subtitleId="Des 2022 - Jan 2023 · Bandar Lampung, Indonesia"
     >
-      <span class="block">• Mendesain dan mengembangkan website sekolah menggunakan framework CodeIgniter 3.</span>
-      <span class="block">• Mengumpulkan data alumni, sejarah sekolah, dan dokumentasi kegiatan sebagai konten website.</span>
+      <Dual as="span" class="block" en="• Designed and developed the school website with the CodeIgniter 3 framework." id="• Mendesain dan mengembangkan website sekolah menggunakan framework CodeIgniter 3." />
+      <Dual as="span" class="block" en="• Collected alumni data, school history, and activity documentation as website content." id="• Mengumpulkan data alumni, sejarah sekolah, dan dokumentasi kegiatan sebagai konten website." />
     </TimeLineElement>
     <TimeLineElement
-      title="Asisten Dosen, Universitas Lampung"
-      subtitle="Agu 2021 - Jun 2023 · Universitas Lampung, Bandar Lampung"
+      title="Lecturer Assistant, Lampung University"
+      titleId="Asisten Dosen, Universitas Lampung"
+      subtitle="Aug 2021 - Jun 2023 · Lampung University, Bandar Lampung"
+      subtitleId="Agu 2021 - Jun 2023 · Universitas Lampung, Bandar Lampung"
     >
-      <span class="block">• Melaksanakan proses belajar mengajar dan menyusun modul pembelajaran.</span>
-      <span class="block">• Membantu mahasiswa dalam pembelajaran serta penggunaan alat di laboratorium.</span>
-      <span class="block">• Bekerja sama dengan jurusan dalam penilaian dan pendistribusian nilai mahasiswa.</span>
-      <span class="block">• Mata kuliah yang diampu: Matematika Dasar, Matematika Diskrit, Komunikasi Data dan Jaringan Komputer, serta Kecerdasan Buatan.</span>
+      <Dual as="span" class="block" en="• Carried out teaching sessions and prepared learning modules." id="• Melaksanakan proses belajar mengajar dan menyusun modul pembelajaran." />
+      <Dual as="span" class="block" en="• Helped students with their studies and with using laboratory equipment." id="• Membantu mahasiswa dalam pembelajaran serta penggunaan alat di laboratorium." />
+      <Dual as="span" class="block" en="• Worked with the department on grading and distributing student grades." id="• Bekerja sama dengan jurusan dalam penilaian dan pendistribusian nilai mahasiswa." />
+      <Dual as="span" class="block" en="• Courses taught: Basic Mathematics, Discrete Mathematics, Data Communication and Computer Networks, and Artificial Intelligence." id="• Mata kuliah yang diampu: Matematika Dasar, Matematika Diskrit, Komunikasi Data dan Jaringan Komputer, serta Kecerdasan Buatan." />
     </TimeLineElement>
   </div>
 
   <div class="mb-5">
-    <h2 class="text-3xl w-full font-bold">Organisasi</h2>
+    <h2 class="text-3xl w-full font-bold"><Dual en="Organizations" id="Organisasi" /></h2>
   </div>
 
   <div class="time-line-container mb-10">
     <TimeLineElement
-      title="Kepala Bidang, Lembaga Pers Mahasiswa Natural FMIPA Unila"
-      subtitle="Jan 2022 - Des 2023 · Bandar Lampung"
+      title="Head of Division, Lembaga Pers Mahasiswa Natural FMIPA Unila"
+      titleId="Kepala Bidang, Lembaga Pers Mahasiswa Natural FMIPA Unila"
+      subtitle="Jan 2022 - Dec 2023 · Bandar Lampung"
+      subtitleId="Jan 2022 - Des 2023 · Bandar Lampung"
     >
-      <span class="block">• Merancang dan melaksanakan program regenerasi anggota, termasuk evaluasi proses perekrutan, pembinaan, dan pengembangan kualitas anggota (Kaderisasi).</span>
-      <span class="block">• Mengatur pengelolaan konten digital organisasi untuk kebutuhan komunikasi dan dokumentasi kegiatan (Multimedia).</span>
+      <Dual as="span" class="block" en="• Designed and ran the member regeneration program, including evaluating recruitment, mentoring, and member quality development (Cadre Development)." id="• Merancang dan melaksanakan program regenerasi anggota, termasuk evaluasi proses perekrutan, pembinaan, dan pengembangan kualitas anggota (Kaderisasi)." />
+      <Dual as="span" class="block" en="• Managed the organization's digital content for communication and activity documentation (Multimedia)." id="• Mengatur pengelolaan konten digital organisasi untuk kebutuhan komunikasi dan dokumentasi kegiatan (Multimedia)." />
     </TimeLineElement>
   </div>
 
 <div class="mb-5">
-    <h2 class="text-3xl w-full font-bold">Sertifikat Pelatihan</h2>
+    <h2 class="text-3xl w-full font-bold"><Dual en="Training Certificates" id="Sertifikat Pelatihan" /></h2>
   </div>
 
   <div class="time-line-container mb-6">
     <TimeLineElement
       title="Java Foundations, Oracle Academy"
-      subtitle="Agu 2021 - Jan 2022 · Award of Course Completion"
+      titleId="Java Foundations, Oracle Academy"
+      subtitle="Aug 2021 - Jan 2022 · Award of Course Completion"
+      subtitleId="Agu 2021 - Jan 2022 · Award of Course Completion"
     >
-      <span class="block">• Menyelesaikan seluruh coursework program Java Foundations, mencakup dasar pemrograman berorientasi objek, struktur kelas, inheritance, dan exception handling.</span>
+      <Dual as="span" class="block" en="• Completed all coursework in the Java Foundations program, covering the basics of object-oriented programming, class structure, inheritance, and exception handling." id="• Menyelesaikan seluruh coursework program Java Foundations, mencakup dasar pemrograman berorientasi objek, struktur kelas, inheritance, dan exception handling." />
     </TimeLineElement>
     <TimeLineElement
-      title="English Conversation Club (ECC), UPT Bahasa Universitas Lampung"
-      subtitle="1-23 Agustus 2022 · 32 jam · Daring"
+      title="English Conversation Club (ECC), UPT Bahasa Lampung University"
+      titleId="English Conversation Club (ECC), UPT Bahasa Universitas Lampung"
+      subtitle="August 1-23, 2022 · 32 hours · Online"
+      subtitleId="1-23 Agustus 2022 · 32 jam · Daring"
     >
-      <span class="block">• Mengikuti pelatihan bahasa Inggris bagi mahasiswa Universitas Lampung yang berfokus pada kemampuan percakapan dan komunikasi lisan.</span>
+      <Dual as="span" class="block" en="• Attended English training for Lampung University students focused on conversation and oral communication skills." id="• Mengikuti pelatihan bahasa Inggris bagi mahasiswa Lampung University yang berfokus pada kemampuan percakapan dan komunikasi lisan." />
     </TimeLineElement>
   </div>
 
   <div class="mb-10">
-    <a class="btn btn-outline btn-sm" href={withBase("/sertifikasi")}> Lihat sertifikat pelatihan </a>
+    <a class="btn btn-outline btn-sm" href={withBase("/sertifikasi")}><Dual en="View training certificates" id="Lihat sertifikat pelatihan" /></a>
   </div>
 
   <div class="mb-5">
-    <h2 class="text-3xl w-full font-bold">Keahlian</h2>
+    <h2 class="text-3xl w-full font-bold"><Dual en="Skills" id="Keahlian" /></h2>
   </div>
 
   <ul class="list-disc mx-6 grid gap-2 mb-10">
-    <li><strong>Bahasa Pemrograman &amp; Framework:</strong> Python (Odoo, Ren'Py) · PHP (Laravel, CodeIgniter 3) · Java (Android Studio) · JavaScript/TypeScript · HTML/CSS · Rust (Tauri, proyek pribadi) · SQL</li>
+    <li><strong><Dual en="Programming Languages & Frameworks:" id="Bahasa Pemrograman & Framework:" /></strong> Python (Odoo, Ren'Py) · PHP (Laravel, CodeIgniter 3) · Java (Android Studio) · JavaScript/TypeScript · HTML/CSS · Rust (Tauri, personal projects) · SQL</li>
     <li><strong>Tools:</strong> Git · Cloud Computing · Odoo 10 · Android Studio · Tauri v2</li>
   </ul>
 
   <div class="mb-5">
-    <h2 class="text-3xl w-full font-bold">Kontak</h2>
+    <h2 class="text-3xl w-full font-bold"><Dual en="Contact" id="Kontak" /></h2>
   </div>
 
   <ul class="list-disc mx-6 grid gap-2">
     <li>Email: <a class="link" href="mailto:egaanzani77@gmail.com">egaanzani77@gmail.com</a></li>
     <li>LinkedIn: <a class="link" href="https://www.linkedin.com/in/egaanzani" target="_blank">linkedin.com/in/egaanzani</a></li>
     <li>GitHub: <a class="link" href="https://github.com/anzaniy" target="_blank">github.com/anzaniy</a></li>
-    <li>Portofolio: <a class="link" href="https://anzaniy.github.io/MyPortofolio" target="_blank">anzaniy.github.io/MyPortofolio</a></li>
-    <li>Lokasi: Bandar Lampung, Lampung, Indonesia</li>
+    <li><Dual en="Portfolio:" id="Portofolio:" /> <a class="link" href="https://anzaniy.github.io/MyPortofolio" target="_blank">anzaniy.github.io/MyPortofolio</a></li>
+    <li><Dual en="Location:" id="Lokasi:" /> Bandar Lampung, Lampung, Indonesia</li>
   </ul>
 </BaseLayout>

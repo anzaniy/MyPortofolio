@@ -1,4 +1,4 @@
----
+﻿---
 import { withBase } from "../config";
 
 interface Props {
@@ -15,7 +15,7 @@ const resolveImage = (src: string) => (/^https?:\/\//.test(src) ? src : withBase
   data-carousel
   role="group"
   aria-roledescription="carousel"
-  aria-label={`Dokumentasi ${alt}`}
+  aria-label={`Documentation ${alt}`}
 >
   <div class="overflow-hidden rounded-lg border border-base-300 bg-base-200">
     <div class="flex transition-transform duration-500 ease-out" data-track aria-live="polite">
@@ -40,7 +40,7 @@ const resolveImage = (src: string) => (/^https?:\/\//.test(src) ? src : withBase
         <button
           type="button"
           data-prev
-          aria-label="Screenshot sebelumnya"
+          aria-label="Previous screenshot"
           class="btn btn-circle btn-sm absolute left-3 top-1/2 -translate-y-1/2 bg-base-100/80 border-base-300"
         >
           ‹
@@ -48,7 +48,7 @@ const resolveImage = (src: string) => (/^https?:\/\//.test(src) ? src : withBase
         <button
           type="button"
           data-next
-          aria-label="Screenshot berikutnya"
+          aria-label="Next screenshot"
           class="btn btn-circle btn-sm absolute right-3 top-1/2 -translate-y-1/2 bg-base-100/80 border-base-300"
         >
           ›
@@ -59,7 +59,7 @@ const resolveImage = (src: string) => (/^https?:\/\//.test(src) ? src : withBase
             <button
               type="button"
               data-dot={index}
-              aria-label={`Ke screenshot ${index + 1}`}
+              aria-label={`Go to screenshot ${index + 1}`}
               class="group p-2.5"
             >
               <span

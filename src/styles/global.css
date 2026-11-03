@@ -1,3 +1,8 @@
 .time-line-container>div:last-child .education__time>.education__line {
     display: none;
 }
+
+[data-lang="en"] [data-lang-block="id"],
+[data-lang="id"] [data-lang-block="en"] {
+    display: none;
+}

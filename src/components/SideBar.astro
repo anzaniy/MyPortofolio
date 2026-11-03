@@ -1,5 +1,6 @@
 ---
 import SideBarFooter from "./SideBarFooter.astro";
+import LanguageToggle from "./LanguageToggle.astro";
 import { Image } from "astro:assets";
 import SideBarMenu from "./SideBarMenu.astro";
 import { withBase } from "../config";
@@ -17,6 +18,9 @@ const { sideBarActiveItemID } = Astro.props;
           </div>
         </div>
       </a>
+    </div>
+    <div class="flex justify-center mb-3">
+      <LanguageToggle />
     </div>
     <SideBarMenu sideBarActiveItemID={sideBarActiveItemID} />
     <SideBarFooter />

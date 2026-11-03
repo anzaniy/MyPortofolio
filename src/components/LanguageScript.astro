@@ -1,0 +1,33 @@
+<script>
+  const LANG_KEY = "lang";
+
+  const storedLang = () => (localStorage.getItem(LANG_KEY) === "id" ? "id" : "en");
+
+  const applyLang = () => {
+    const lang = storedLang();
+    const root = document.documentElement;
+    root.dataset.lang = lang;
+    root.lang = lang;
+
+    document.querySelectorAll<HTMLElement>("[data-text-id]").forEach((el) => {
+      if (el.dataset.textEn === undefined) el.dataset.textEn = el.textContent ?? "";
+      el.textContent = lang === "id" ? el.dataset.textId ?? "" : el.dataset.textEn;
+    });
+
+    document.querySelectorAll<HTMLElement>("[data-set-lang]").forEach((el) => {
+      const active = el.dataset.setLang === lang;
+      el.classList.toggle("btn-active", active);
+      el.setAttribute("aria-pressed", String(active));
+    });
+  };
+
+  document.addEventListener("click", (event) => {
+    const button = (event.target as HTMLElement | null)?.closest<HTMLElement>("[data-set-lang]");
+    if (!button) return;
+    localStorage.setItem(LANG_KEY, button.dataset.setLang === "id" ? "id" : "en");
+    applyLang();
+  });
+
+  applyLang();
+  document.addEventListener("astro:page-load", applyLang);
+</script>

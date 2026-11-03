@@ -3,10 +3,14 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import HorizontalCard from "../components/HorizontalCard.astro";
 import { withBase } from "../config";
 import { getCollection } from "astro:content";
+import { thumb } from "../lib/thumb";
 
 const projects = (await getCollection("projects"))
   .filter((project) => project.data.kind === "individual")
   .sort((a, b) => a.data.order - b.data.order);
+
+const projectsEn = await getCollection("projects-en");
+const enBySlug = new Map(projectsEn.map((project) => [project.slug, project.data]));
 ---
 
 <BaseLayout title="Individual Project" sideBarActiveItemID="individual">
@@ -16,8 +20,11 @@ const projects = (await getCollection("projects"))
   {
     projects.map((project) => (
       <HorizontalCard
-        title={project.data.title}
-        desc={project.data.description}
+        img={thumb(project.data.gallery[0])}
+        title={enBySlug.get(project.slug)?.title ?? project.data.title}
+        titleId={project.data.title}
+        desc={enBySlug.get(project.slug)?.description ?? project.data.description}
+        descId={project.data.description}
         url={withBase(`/individual-project/${project.slug}`)}
         target="_self"
         badge={project.data.category}
