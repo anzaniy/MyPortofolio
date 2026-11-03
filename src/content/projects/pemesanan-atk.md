@@ -7,6 +7,10 @@ role: "Solo Developer"
 period: "2026"
 tech: ["Odoo 10", "Python", "PostgreSQL", "XML/QWeb", "report_xlsx"]
 repo: "https://github.com/anzaniy/PemesananATK"
+gallery:
+  - "/images/projects/pemesanan-atk-1.png"
+  - "/images/projects/pemesanan-atk-2.png"
+  - "/images/projects/pemesanan-atk-3.png"
 order: 3
 ---
 

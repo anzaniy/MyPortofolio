@@ -10,7 +10,6 @@ gallery:
   - "/images/projects/hunter-board-1.png"
   - "/images/projects/hunter-board-2.png"
   - "/images/projects/hunter-board-3.png"
-  - "/images/projects/hunter-board-4.png"
 repo: "https://github.com/anzaniy/HunterBoard"
 demo: "https://hunterboard.live/"
 order: 1

@@ -9,6 +9,7 @@ tech: ["Rust", "Tauri v2", "TypeScript", "HTML", "CSS", "LRCLIB API"]
 gallery:
   - "/images/projects/musely-1.png"
   - "/images/projects/musely-2.png"
+  - "/images/projects/musely-3.png"
 repo: "https://github.com/anzaniy/Musely"
 order: 2
 ---
