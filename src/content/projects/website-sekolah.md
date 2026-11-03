@@ -3,7 +3,7 @@ title: "Website Sekolah SMA Al Kautsar"
 description: "Website sekolah berbasis CodeIgniter 3 untuk menampilkan profil sekolah, data alumni, sejarah, dan dokumentasi kegiatan."
 category: "Web Dev"
 role: "Web Developer Intern"
-period: "Des 2022 – Jan 2023"
+period: "Des 2022 - Jan 2023"
 tech: ["PHP", "CodeIgniter 3"]
 gallery:
   - "/images/projects/website-sekolah-1.png"
@@ -29,10 +29,10 @@ Informasi sekolah seperti profil, sejarah, data alumni, dan dokumentasi kegiatan
 
 ## Fitur
 
-- **Profil sekolah** — informasi umum, visi, dan misi.
-- **Data alumni** — daftar alumni sebagai bagian dari arsip sekolah.
-- **Sejarah sekolah** — perjalanan dan perkembangan sekolah.
-- **Dokumentasi kegiatan** — galeri foto dan catatan aktivitas sekolah.
+- **Profil sekolah**: informasi umum, visi, dan misi.
+- **Data alumni**: daftar alumni sebagai bagian dari arsip sekolah.
+- **Sejarah sekolah**: perjalanan dan perkembangan sekolah.
+- **Dokumentasi kegiatan**: galeri foto dan catatan aktivitas sekolah.
 
 ## Teknologi
 
@@ -44,7 +44,7 @@ Informasi sekolah seperti profil, sejarah, data alumni, dan dokumentasi kegiatan
 
 ## Alur Pengerjaan
 
-1. **Pengumpulan kebutuhan** — wawancara dan pengumpulan data dari pihak sekolah.
-2. **Perancangan struktur** — menentukan halaman dan alur navigasi.
-3. **Implementasi** — membangun halaman dengan pola MVC CodeIgniter 3.
-4. **Pengujian** — memeriksa tampilan dan fungsi dasar sebelum diserahkan.
+1. **Pengumpulan kebutuhan**: wawancara dan pengumpulan data dari pihak sekolah.
+2. **Perancangan struktur**: menentukan halaman dan alur navigasi.
+3. **Implementasi**: membangun halaman dengan pola MVC CodeIgniter 3.
+4. **Pengujian**: memeriksa tampilan dan fungsi dasar sebelum diserahkan.

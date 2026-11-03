@@ -3,7 +3,7 @@ title: "Game Edukasi Geometri Analitik"
 description: "Game Visual Novel edukasi bertema Geometri Analitik Bidang, dibangun dengan Ren'Py menggunakan metodologi GDLC."
 category: "Game Dev"
 role: "Game Developer & Peneliti"
-period: "Jan 2024 – Feb 2026"
+period: "Jan 2024 - Feb 2026"
 tech: ["Ren'Py", "Python", "GDLC", "Alpha Testing", "Beta Testing"]
 gallery:
   - "/images/projects/game-geometri-1.png"
@@ -32,18 +32,18 @@ Materi Geometri Analitik sering dianggap sulit karena bersifat abstrak. Pendekat
 
 ## Fitur
 
-- **Alur cerita bercabang** — pilihan dialog memengaruhi jalannya cerita.
-- **Pertanyaan materi** — soal Geometri Analitik di tengah dialog.
-- **Umpan balik jawaban** — pemain mendapat penjelasan saat menjawab benar atau salah.
-- **Aset visual dan audio** — latar, karakter, dan musik pendukung suasana.
+- **Alur cerita bercabang**: pilihan dialog memengaruhi jalannya cerita.
+- **Pertanyaan materi**: soal Geometri Analitik di tengah dialog.
+- **Umpan balik jawaban**: pemain mendapat penjelasan saat menjawab benar atau salah.
+- **Aset visual dan audio**: latar, karakter, dan musik pendukung suasana.
 
 ## Metodologi GDLC
 
-1. **Initiation** — menentukan tujuan pembelajaran dan batasan proyek.
-2. **Pre-production** — merancang cerita, materi, dan aset.
-3. **Production** — implementasi skrip dan sistem di Ren'Py.
-4. **Testing** — Alpha Testing untuk fungsi, Beta Testing untuk pengalaman pemain.
-5. **Release** — penyusunan build dan laporan penelitian.
+1. **Initiation**: menentukan tujuan pembelajaran dan batasan proyek.
+2. **Pre-production**: merancang cerita, materi, dan aset.
+3. **Production**: implementasi skrip dan sistem di Ren'Py.
+4. **Testing**: Alpha Testing untuk fungsi, Beta Testing untuk pengalaman pemain.
+5. **Release**: penyusunan build dan laporan penelitian.
 
 ## Teknologi
 

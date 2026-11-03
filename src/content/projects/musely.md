@@ -32,12 +32,12 @@ Lirik lagu biasanya hanya terlihat di dalam aplikasi pemutar musik, sehingga ter
 
 ## Fitur
 
-- **Lirik tersinkron** — baris aktif disorot dan bergulir mengikuti posisi lagu.
-- **Tanpa login Spotify** — judul dan status pemutaran dibaca dari GSMTC Windows.
-- **Kontrol pemutaran** — tombol sebelumnya, play/pause, dan berikutnya langsung dari widget.
-- **Penyesuaian offset** — lirik bisa dimajukan atau dimundurkan per 100 ms, dan nilainya disimpan.
-- **Mode ringkas** — kartu dan tombol disembunyikan saat kursor menjauh, menyisakan teks lirik ber-outline.
-- **Selalu di atas** — widget tetap terlihat meski berpindah aplikasi, dan bisa disembunyikan lewat tray.
+- **Lirik tersinkron**: baris aktif disorot dan bergulir mengikuti posisi lagu.
+- **Tanpa login Spotify**: judul dan status pemutaran dibaca dari GSMTC Windows.
+- **Kontrol pemutaran**: tombol sebelumnya, play/pause, dan berikutnya langsung dari widget.
+- **Penyesuaian offset**: lirik bisa dimajukan atau dimundurkan per 100 ms, dan nilainya disimpan.
+- **Mode ringkas**: kartu dan tombol disembunyikan saat kursor menjauh, menyisakan teks lirik ber-outline.
+- **Selalu di atas**: widget tetap terlihat meski berpindah aplikasi, dan bisa disembunyikan lewat tray.
 
 ## Teknologi
 

@@ -278,7 +278,7 @@ Please be wary of working on issues _not_ marked as `accepted`. Just because som
 
 ## License
 
-Astrofy is licensed under the MIT license — see the [LICENSE](https://github.com/manuelernestog/astrofy/blob/main/LICENSE) file for details.
+Astrofy is licensed under the MIT license, see the [LICENSE](https://github.com/manuelernestog/astrofy/blob/main/LICENSE) file for details.
 
 ## Contributors
 

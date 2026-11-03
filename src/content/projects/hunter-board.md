@@ -18,7 +18,7 @@ order: 1
 
 ## Ringkasan
 
-Hunter Board adalah situs referensi buatan penggemar untuk **Monster Hunter Wilds** dan **Monster Hunter Outlanders**. Fokus utamanya adalah quest board untuk membandingkan reward, serta character builder untuk menyusun build senjata. Seluruh situs dibangun dengan HTML, CSS, dan JavaScript murni — tanpa framework, tanpa backend, dan tanpa proses build.
+Hunter Board adalah situs referensi buatan penggemar untuk **Monster Hunter Wilds** dan **Monster Hunter Outlanders**. Fokus utamanya adalah quest board untuk membandingkan reward, serta character builder untuk menyusun build senjata. Seluruh situs dibangun dengan HTML, CSS, dan JavaScript murni, tanpa framework, tanpa backend, dan tanpa proses build.
 
 ## Latar Belakang
 
@@ -34,12 +34,12 @@ Informasi reward quest seperti HRP, Zenny, dan reward unik tersebar di berbagai 
 
 ## Fitur
 
-- **Quest board** — 155 quest (termasuk event quest) dengan filter tipe quest, urutan berdasarkan HRP, pencarian, dan paginasi.
-- **Character builder** — 14 build senjata lengkap dengan panel detail dan pencarian skill.
-- **Ikon monster** — 56 ikon monster dan 14 ikon senjata yang dipetakan otomatis ke nama monster.
-- **Hub dua game** — pintu masuk terpisah untuk Wilds dan Outlanders.
-- **Halaman pendukung** — about, contact, privacy, credits, dan 404 kustom.
-- **Siap mesin pencari** — sitemap, robots.txt, dan gambar pratinjau sosial 1200×630.
+- **Quest board**: 155 quest (termasuk event quest) dengan filter tipe quest, urutan berdasarkan HRP, pencarian, dan paginasi.
+- **Character builder**: 14 build senjata lengkap dengan panel detail dan pencarian skill.
+- **Ikon monster**: 56 ikon monster dan 14 ikon senjata yang dipetakan otomatis ke nama monster.
+- **Hub dua game**: pintu masuk terpisah untuk Wilds dan Outlanders.
+- **Halaman pendukung**: about, contact, privacy, credits, dan 404 kustom.
+- **Siap mesin pencari**: sitemap, robots.txt, dan gambar pratinjau sosial 1200×630.
 
 ## Teknologi
 
@@ -53,10 +53,10 @@ Informasi reward quest seperti HRP, Zenny, dan reward unik tersebar di berbagai 
 
 ## Struktur Data
 
-- `quests-data.js` — 86 quest dasar, menjadi 155 saat event quest digabungkan.
-- `builds-data.js` — 14 build senjata.
-- `skills-data.js` — referensi skill dan set bonus untuk panel detail build.
-- `monster-icons.js` — pemetaan nama monster ke berkas ikon.
+- `quests-data.js`: 86 quest dasar, menjadi 155 saat event quest digabungkan.
+- `builds-data.js`: 14 build senjata.
+- `skills-data.js`: referensi skill dan set bonus untuk panel detail build.
+- `monster-icons.js`: pemetaan nama monster ke berkas ikon.
 
 ## Catatan
 
