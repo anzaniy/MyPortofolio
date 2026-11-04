@@ -9,7 +9,7 @@ gallery:
   - "/images/projects/api-mobile-tdm-1.png"
   - "/images/projects/api-mobile-tdm-2.png"
   - "/images/projects/api-mobile-tdm-3.png"
-order: 1
+order: 2
 ---
 
 ## Ringkasan

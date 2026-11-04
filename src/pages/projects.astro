@@ -5,47 +5,30 @@ import { withBase } from "../config";
 import { getCollection } from "astro:content";
 import { thumb } from "../lib/thumb";
 
-const projects = (await getCollection("projects")).filter(
-  (project) => project.data.kind === "work"
-);
+const projects = (await getCollection("projects"))
+  .filter((project) => project.data.kind === "work")
+  .sort((a, b) => a.data.order - b.data.order);
 
 const projectsEn = await getCollection("projects-en");
 const enBySlug = new Map(projectsEn.map((project) => [project.slug, project.data]));
-
-const categories = [
-  { name: "Web Dev", id: "web-dev" },
-  { name: "System Dev", id: "system-dev" },
-  { name: "Game Dev", id: "game-dev" },
-];
-
-const byCategory = (category: string) =>
-  projects
-    .filter((project) => project.data.category === category)
-    .sort((a, b) => a.data.order - b.data.order);
 ---
 
 <BaseLayout title="Work Project" sideBarActiveItemID="work">
   <h1 class="sr-only">Work Project</h1>
+  <h2 class="text-3xl w-full font-bold mb-5">Work Project</h2>
   {
-    categories.map((category, index) => (
-      <div id={category.id} class="scroll-mt-24">
-        <h2 class:list={["text-3xl w-full font-bold mb-5", index === 0 ? "" : "mt-10"]}>
-          {category.name}
-        </h2>
-        {byCategory(category.name).map((project) => (
-          <HorizontalCard
-            img={thumb(project.data.gallery[0])}
-            title={enBySlug.get(project.slug)?.title ?? project.data.title}
-            titleId={project.data.title}
-            desc={enBySlug.get(project.slug)?.description ?? project.data.description}
-            descId={project.data.description}
-            url={withBase(`/projects/${project.slug}`)}
-            target="_self"
-            badge={project.data.category}
-            headingLevel="h3"
-          />
-        ))}
-      </div>
+    projects.map((project) => (
+      <HorizontalCard
+        img={thumb(project.data.gallery[0])}
+        title={enBySlug.get(project.slug)?.title ?? project.data.title}
+        titleId={project.data.title}
+        desc={enBySlug.get(project.slug)?.description ?? project.data.description}
+        descId={project.data.description}
+        url={withBase(`/projects/${project.slug}`)}
+        target="_self"
+        badge={project.data.category}
+        headingLevel="h3"
+      />
     ))
   }
 </BaseLayout>
