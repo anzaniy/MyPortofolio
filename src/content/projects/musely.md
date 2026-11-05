@@ -48,7 +48,6 @@ Lirik lagu biasanya hanya terlihat di dalam aplikasi pemutar musik, sehingga ter
 | Frontend | TypeScript, HTML, CSS |
 | Sumber pemutaran | Global System Media Transport Controls (GSMTC) |
 | Sumber lirik | LRCLIB |
-| Penyimpanan preferensi | `localStorage` |
 | Distribusi | Build lokal (installer NSIS) |
 
 ## Cara Kerja

@@ -52,7 +52,6 @@ Stationery requests in many teams are still handled through chat or spreadsheets
 | Database | PostgreSQL |
 | Interface | XML (Odoo views) |
 | Reporting | QWeb and `report_xlsx` |
-| License | LGPL-3 |
 
 ## Transaction Flow
 

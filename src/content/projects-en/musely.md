@@ -48,7 +48,6 @@ Song lyrics are usually only visible inside the music player app, so they are hi
 | Frontend | TypeScript, HTML, CSS |
 | Playback source | Global System Media Transport Controls (GSMTC) |
 | Lyrics source | LRCLIB |
-| Preference storage | `localStorage` |
 | Distribution | Local build (NSIS installer) |
 
 ## How It Works

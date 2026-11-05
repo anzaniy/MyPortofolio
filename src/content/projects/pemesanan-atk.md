@@ -52,7 +52,6 @@ Pengajuan ATK di banyak tim masih dilakukan lewat chat atau spreadsheet, sehingg
 | Basis data | PostgreSQL |
 | Tampilan | XML (Odoo views) |
 | Laporan | QWeb dan `report_xlsx` |
-| Lisensi | LGPL-3 |
 
 ## Alur Transaksi
 
