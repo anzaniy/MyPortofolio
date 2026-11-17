@@ -15,6 +15,25 @@ export interface Certificate {
 
 export const certificates: Certificate[] = [
     {
+        title: "Software Engineer",
+        issuer: { en: "HackerRank", id: "HackerRank" },
+        type: "Sertifikat",
+        date: { en: "November 17, 2026", id: "17 November 2026" },
+        credentialLabel: { en: "Credential ID", id: "ID Kredensial" },
+        credentialId: "2AFDDDD55917",
+        description: {
+            en: "Passed the HackerRank Software Engineer role certification test.",
+            id: "Lulus ujian sertifikasi peran Software Engineer dari HackerRank.",
+        },
+        image: "/images/certificates/hackerrank-software-engineer.png",
+        imageAlt: {
+            en: "HackerRank Software Engineer Certificate of Accomplishment for Muhammad Ega Putra Anzani",
+            id: "Sertifikat Software Engineer dari HackerRank atas nama Muhammad Ega Putra Anzani",
+        },
+        width: 2381,
+        height: 1815,
+    },
+    {
         title: "Java Foundations",
         issuer: { en: "Oracle Academy", id: "Oracle Academy" },
         type: "Sertifikat",
