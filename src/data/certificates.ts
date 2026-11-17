@@ -34,6 +34,25 @@ export const certificates: Certificate[] = [
         height: 1815,
     },
     {
+        title: "C# (Basic)",
+        issuer: { en: "HackerRank", id: "HackerRank" },
+        type: "Sertifikat",
+        date: { en: "November 17, 2026", id: "17 November 2026" },
+        credentialLabel: { en: "Credential ID", id: "ID Kredensial" },
+        credentialId: "AB55DC187E33",
+        description: {
+            en: "Passed the HackerRank C# (Basic) skill certification test.",
+            id: "Lulus ujian sertifikasi keterampilan C# (Basic) dari HackerRank.",
+        },
+        image: "/images/certificates/hackerrank-c-sharp-basic.png",
+        imageAlt: {
+            en: "HackerRank C# (Basic) Certificate of Accomplishment for Muhammad Ega Putra Anzani",
+            id: "Sertifikat C# (Basic) dari HackerRank atas nama Muhammad Ega Putra Anzani",
+        },
+        width: 2381,
+        height: 1815,
+    },
+    {
         title: "Java Foundations",
         issuer: { en: "Oracle Academy", id: "Oracle Academy" },
         type: "Sertifikat",
