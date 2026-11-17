@@ -2,6 +2,7 @@
 title: "Musely"
 description: "A Windows desktop widget that shows synced song lyrics for the track currently playing, always on top of other windows."
 category: "System Dev"
+badge: "Tauri v2 · Rust"
 kind: "individual"
 role: "Solo Developer"
 period: "2026"

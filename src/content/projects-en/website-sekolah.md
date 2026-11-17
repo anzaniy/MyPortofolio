@@ -2,6 +2,7 @@
 title: "SMA Al Kautsar School Website"
 description: "CodeIgniter 3 school website presenting the school profile, alumni data, history, and activity documentation."
 category: "Web Dev"
+badge: "CodeIgniter 3 · PHP"
 role: "Web Developer Intern"
 period: "Dec 2022 - Jan 2023"
 tech: ["PHP", "CodeIgniter 3"]

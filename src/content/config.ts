@@ -28,6 +28,7 @@ const projectSchema = z.object({
     title: z.string(),
     description: z.string(),
     category: z.enum(["Web Dev", "System Dev", "Game Dev"]),
+    badge: z.string(),
     kind: z.enum(["work", "individual"]).default("work"),
     role: z.string().optional(),
     period: z.string().optional(),

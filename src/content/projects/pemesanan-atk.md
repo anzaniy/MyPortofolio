@@ -2,6 +2,7 @@
 title: "Sistem Pemesanan Alat Tulis Kerja"
 description: "Modul Odoo 10 untuk pengajuan alat tulis kantor: master barang dan departemen, alur persetujuan, validasi stok, serta laporan PDF dan Excel."
 category: "System Dev"
+badge: "Odoo 10 · Python"
 kind: "individual"
 role: "Solo Developer"
 period: "2026"

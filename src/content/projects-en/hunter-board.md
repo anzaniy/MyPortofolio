@@ -2,6 +2,7 @@
 title: "Hunter Board"
 description: "A fan-made Monster Hunter Wilds reference site: quest reward comparisons and character builds, built with plain HTML, CSS, and JavaScript without any framework."
 category: "Web Dev"
+badge: "JavaScript"
 kind: "individual"
 role: "Solo Developer"
 period: "2026"

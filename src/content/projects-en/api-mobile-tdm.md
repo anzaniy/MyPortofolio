@@ -2,6 +2,7 @@
 title: "Honda Kita Service Booking System"
 description: "Booking service API development that carries data from the mobile app into the Honda Kita system, along with web UI fixes and database query optimization."
 category: "System Dev"
+badge: "Odoo 10 · Python"
 role: "System Developer Intern"
 period: "Feb 2023 - Jul 2023"
 tech: ["Odoo 10", "Python", "PostgreSQL", "REST API"]

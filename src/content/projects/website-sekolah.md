@@ -2,6 +2,7 @@
 title: "Website Sekolah SMA Al Kautsar"
 description: "Website sekolah berbasis CodeIgniter 3 untuk menampilkan profil sekolah, data alumni, sejarah, dan dokumentasi kegiatan."
 category: "Web Dev"
+badge: "CodeIgniter 3 · PHP"
 role: "Web Developer Intern"
 period: "Des 2022 - Jan 2023"
 tech: ["PHP", "CodeIgniter 3"]

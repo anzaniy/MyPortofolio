@@ -2,6 +2,7 @@
 title: "Analytic Geometry Educational Game"
 description: "An educational Visual Novel game about Plane Analytic Geometry, built with Ren'Py using the GDLC methodology."
 category: "Game Dev"
+badge: "Ren'Py · Python"
 role: "Game Developer & Researcher"
 period: "Jan 2024 - Feb 2026"
 tech: ["Ren'Py", "Python", "GDLC", "Alpha Testing", "Beta Testing"]

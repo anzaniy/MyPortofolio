@@ -26,7 +26,7 @@ const enBySlug = new Map(projectsEn.map((project) => [project.slug, project.data
         descId={project.data.description}
         url={withBase(`/projects/${project.slug}`)}
         target="_self"
-        badge={project.data.category}
+        badge={project.data.badge}
         headingLevel="h3"
       />
     ))

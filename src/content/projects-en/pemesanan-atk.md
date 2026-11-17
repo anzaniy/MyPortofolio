@@ -2,6 +2,7 @@
 title: "Office Stationery Ordering System"
 description: "An Odoo 10 module for office stationery requests: item and department masters, an approval flow, stock validation, plus PDF and Excel reports."
 category: "System Dev"
+badge: "Odoo 10 · Python"
 kind: "individual"
 role: "Solo Developer"
 period: "2026"

@@ -2,6 +2,7 @@
 title: "Game Edukasi Geometri Analitik"
 description: "Game Visual Novel edukasi bertema Geometri Analitik Bidang, dibangun dengan Ren'Py menggunakan metodologi GDLC."
 category: "Game Dev"
+badge: "Ren'Py · Python"
 role: "Game Developer & Peneliti"
 period: "Jan 2024 - Feb 2026"
 tech: ["Ren'Py", "Python", "GDLC", "Alpha Testing", "Beta Testing"]

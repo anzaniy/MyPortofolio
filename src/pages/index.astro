@@ -47,7 +47,7 @@ const enBySlug = new Map(projectsEn.map((project) => [project.slug, project.data
       img="/images/projects/thumbs/website-sekolah-1.webp"
       url={withBase("/projects/website-sekolah")}
       target="_self"
-      badge="WEB"
+      badge="CodeIgniter 3 · PHP"
       headingLevel="h3"
     />
     <HorizontalCard
@@ -58,7 +58,7 @@ const enBySlug = new Map(projectsEn.map((project) => [project.slug, project.data
       img="/images/projects/thumbs/api-mobile-tdm-1.webp"
       url={withBase("/projects/api-mobile-tdm")}
       target="_self"
-      badge="BACKEND"
+      badge="Odoo 10 · Python"
       headingLevel="h3"
     />
     <HorizontalCard
@@ -69,7 +69,7 @@ const enBySlug = new Map(projectsEn.map((project) => [project.slug, project.data
       img="/images/projects/thumbs/game-geometri-1.webp"
       url={withBase("/projects/game-geometri")}
       target="_self"
-      badge="GAME"
+      badge="Ren'Py · Python"
       headingLevel="h3"
     />
 
@@ -87,7 +87,7 @@ const enBySlug = new Map(projectsEn.map((project) => [project.slug, project.data
           descId={project.data.description}
           url={withBase(`/individual-project/${project.slug}`)}
           target="_self"
-          badge={project.data.category}
+          badge={project.data.badge}
           headingLevel="h3"
         />
       ))

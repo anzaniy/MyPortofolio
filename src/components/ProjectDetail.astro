@@ -36,7 +36,7 @@ const demoLabelId = project.data.category === "Game Dev" ? "Play di itch.io" : "
   </div>
 
   <div class="mb-4 flex flex-wrap items-center gap-2">
-    <span class="badge badge-secondary">{project.data.category}</span>
+    <span class="badge badge-secondary">{project.data.badge}</span>
     {project.data.period && (
       <span class="badge badge-outline">
         <Dual en={projectEn?.data.period ?? project.data.period} id={project.data.period} />

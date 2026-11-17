@@ -2,6 +2,7 @@
 title: "Musely"
 description: "Widget desktop Windows yang menampilkan lirik lagu tersinkron dari lagu yang sedang diputar, selalu di atas jendela lain."
 category: "System Dev"
+badge: "Tauri v2 · Rust"
 kind: "individual"
 role: "Solo Developer"
 period: "2026"
